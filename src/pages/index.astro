@@ -3,7 +3,68 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to CEM.">
-  <main>
-    <h1>Welcome to CEM</h1>
+  <main class="bg-[url('/images/stains.svg')] bg-no-repeat">
+    <div
+      class="font-century flex h-full flex-col items-center justify-center gap-6 py-6"
+    >
+      <img class="w-20" src="/images/logo.svg" alt="" />
+      <div class="text-3xl font-bold uppercase">sito in manutenzione</div>
+      <div>Torneremo presto online. Nel frattempo..</div>
+
+      <div class="flex flex-col gap-6 md:flex-row">
+        <a
+          target="_blank"
+          href="https://www.instagram.com/centroenologicomeridionale/"
+          class="flex w-60 items-center justify-center gap-1 border-2 border-black px-2 py-2"
+        >
+          <img class="w-6" src="/images/ig.svg" alt="" />
+          <div class="font-bold uppercase">seguici su Instagram</div>
+        </a>
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/company/centroenologicomeridionale/"
+          class="bg-cem flex w-60 items-baseline justify-center gap-2 border-2 border-black px-2 py-2"
+        >
+          <img class="w-4" src="/images/linkedin.svg" alt="" />
+          <div class="font-bold uppercase text-white">seguici su LinkedIn</div>
+        </a>
+      </div>
+
+      <div class="flex flex-col gap-6 md:flex-row">
+        <div class="flex flex-col gap-4">
+          <img
+            class="h-72 w-72"
+            src="/images/centro-enologico-meridionale.jpeg"
+            alt=""
+          />
+          <div class="flex flex-col gap-1">
+            <div class="text-xl font-bold">Centro Enologico Meridionale</div>
+            <div class="flex items-center gap-1">
+              <img class="w-5" src="/images/phone.svg" alt="" />
+              <div>0859031303</div>
+            </div>
+            <div class="flex items-center gap-1">
+              <img class="w-5" src="/images/email.svg" alt="" />
+              <a href="mailto:info@cem-group.it">info@cem-group.it</a>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <img class="h-72 w-72" src="/images/cem-service.jpeg" alt="" />
+          <div class="flex flex-col gap-1">
+            <div class="text-xl font-bold">CEM Service</div>
+            <div class="flex items-center gap-1">
+              <img class="w-5" src="/images/phone.svg" alt="" />
+              <div>0859032382</div>
+            </div>
+            <div class="flex items-center gap-1">
+              <img class="w-5" src="/images/email.svg" alt="" />
+              <a href="mailto:info@cem-group.it">ortona@caacanapa.it</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img class="w-52" src="/images/accredia.png" alt="" />
+    </div>
   </main>
 </Layout>
