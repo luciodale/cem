@@ -37,11 +37,11 @@ const certications = [
 
 <Layout title="Certificazioni">
   <main class="text-slate-600">
-    <div class="grid grid-cols-3 gap-10 px-10 py-10">
+    <div class="flex flex-wrap justify-center gap-10 px-10 py-10">
       {
         certications.map(({ title, description, link }) => {
           return (
-            <div class="rounded-lg border bg-slate-100 p-6 shadow-lg">
+            <div class="w-96 rounded-lg border bg-slate-100 p-6 shadow-lg">
               <svg
                 class="mb-3 h-7 w-7 text-gray-800 dark:text-gray-700"
                 aria-hidden="true"
