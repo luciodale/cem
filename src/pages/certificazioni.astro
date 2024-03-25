@@ -1,0 +1,72 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const certications = [
+  {
+    title: "Accreditamento ACCREDIA n° 336",
+    description:
+      "(Ente Italiano Per L’accreditamento Dei Laboratori) per le analisi elencate nel sito del ACCREDIA",
+    link: "#",
+  },
+  {
+    title: "Certificazione Vitivinicola",
+    description:
+      "Autorizzazione del Ministero delle Politiche Agricole e Forestali al Rilascio di Certificati di analisi nel settore vitivinicolo aventi valore ufficiali anche ai fini delle Esportazioni (D.M. 08/04/2010, G.U. 92 del 24/04/2010",
+    link: "#",
+  },
+  {
+    title: "Certificazione Oleicola",
+    description:
+      "Autorizzazione del Ministero delle Politiche Agricole e Forestali al rilascio dei certificati di analisi nel settore oleicolo aventi valore ufficiale (D.M. 08/04/2010, G.U. 92 del 23/04/2010",
+    link: "#",
+  },
+  {
+    title: "Autocontrollo delle industrie alimentari",
+
+    description:
+      "Inserimento nell’elenco regionale dei laboratori di analisi ai fini dell’Autocontrollo delle industrie alimentari DG/11/57 del 12 marzo 2007.",
+    link: "#",
+  },
+  {
+    title: "Certificazione di Qualità",
+    description: "Stampa certificato ACCREDIA",
+    link: "#",
+  },
+];
+---
+
+<Layout title="Certificazioni">
+  <main class="text-slate-600">
+    <div class="grid grid-cols-3 gap-10 px-10 py-10">
+      {
+        certications.map(({ title, description, link }) => {
+          return (
+            <div class="rounded-lg border bg-slate-100 p-6 shadow-lg">
+              <svg
+                class="mb-3 h-7 w-7 text-gray-800 dark:text-gray-700"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z" />
+              </svg>
+              <a href="#">
+                <h5 class="mb-2 text-2xl font-semibold tracking-tight">
+                  {title}
+                </h5>
+              </a>
+              <p class="mb-3 font-normal text-slate-600">{description}</p>
+              <a
+                href={link}
+                class="inline-flex items-center font-medium text-blue-600 hover:underline"
+              >
+                Visita Pagina
+              </a>
+            </div>
+          );
+        })
+      }
+    </div>
+  </main>
+</Layout>
