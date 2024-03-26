@@ -23,6 +23,8 @@ const navLinks = [
     href: "/",
   },
 ];
+
+const currentHref = Astro.url.pathname;
 ---
 
 <nav
@@ -66,7 +68,10 @@ const navLinks = [
       navLinks.map((link) => (
         <a
           href={link.href}
-          class="hidden w-1/6 rounded py-2 text-center  text-xl uppercase text-gray-900 hover:bg-gray-100 md:block md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-gray-700"
+          class:list={[
+            { "text-yellow-500": currentHref === link.href },
+            "hidden w-1/6 rounded py-2 text-center  text-xl uppercase text-gray-900 hover:bg-gray-100 md:block md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-gray-700",
+          ]}
         >
           {link.name}
         </a>
