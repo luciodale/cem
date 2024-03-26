@@ -1,0 +1,37 @@
+---
+
+---
+
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+  integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+  crossorigin=""
+/>
+<script
+  is:inline
+  src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+  integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+  crossorigin=""></script>
+
+<div class="flex w-full justify-center">
+  <div class="z-0 h-[400px] w-full" id="map"></div>
+</div>
+<script is:inline>
+  const latLon = [42.2973477, 14.3547808];
+  const map = L.map("map", {}).setView(latLon, 14);
+
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+
+  const marker = L.marker(latLon).addTo(map);
+  const googleMapsLink =
+    "https://www.google.com/maps/dir//Centro+Enologico+Meridionale+(CEM),+Stazione,+1,+66026+Villa+Caldari+CH/@42.2973477,14.3547808,15.35z/data=!4m9!4m8!1m0!1m5!1m1!1s0x133101bdb63e67c1:0x567bfc7e124fa011!2m2!1d14.3580683!2d42.2985531!3e0?entry=ttu";
+  marker
+    .bindPopup(
+      `<a href=${googleMapsLink} target='_blank' class='cursor-pointer'> <span class='font-bold text-black'> CEM Centro Enologico Meridionale </span> </br>  <span class='underline'> Vai alla destinazione </span> </a>`,
+    )
+    .openPopup();
+</script>
