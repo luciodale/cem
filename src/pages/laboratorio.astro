@@ -1,6 +1,80 @@
 ---
 import { navbarHeight } from "../globals";
 import Layout from "../layouts/Layout.astro";
+
+const analysis = [
+  {
+    name: "VINI",
+    analyses: [
+      "Acidità volatile",
+      "Acido sorbico",
+      "Alcalinità delle ceneri",
+      "Ceneri",
+      "Cloruri",
+      "Diossido di zolfo libero (Anidride solforosa libera)",
+      "Diossido di zolfo totale (Anidride solforosa totale)",
+      "Estratto non riduttore (da calcolo)",
+      "Estratto secco totale",
+      "Litio",
+      "Metanolo",
+      "Ocratossina A",
+      "Saccarosio (da calcolo)",
+      "Saccarosio",
+      "Solfati",
+      "Acidità fissa (da calcolo)",
+      "Calcio",
+      "Caratteristiche cromatiche",
+      "Ferro",
+      "Magnesio",
+      "Potassio",
+      "Rame",
+      "Sodio",
+      "Titolo alcolometrico volumico totale (da calcolo)",
+      "Titolo alcolometrico volumico",
+      "Zinco",
+      "Acidità totale",
+      "Densità relativa 20°C, Massa volumica a 20°C",
+      "Fruttosio, Glucosio",
+      "pH",
+      "Titolo alcolometrico volumico potenziale (da calcolo)",
+      "Sovrapressione",
+    ],
+  },
+  {
+    name: "MOSTI, VINACCE, FECCE DI VINO",
+    analyses: [
+      "Acidità fissa (da calcolo)",
+      "Calcio",
+      "Caratteristiche cromatiche",
+      "Ferro",
+      "Magnesio",
+      "Potassio",
+      "Rame",
+      "Sodio",
+      "Umidità",
+      "Titolo alcolometrico",
+      "Titolo alcolometrico volumico totale (da calcolo)",
+      "Titolo alcolometrico volumico",
+      "Zinco",
+      "Acidità totale",
+      "Densità relativa 20°C, Massa volumica a 20°C",
+      "Fruttosio, Glucosio",
+      "pH",
+      "Titolo alcolometrico volumico potenziale (da calcolo)",
+      "Tenore zuccherino",
+      "Zuccheri ridotti",
+    ],
+  },
+  {
+    name: "OLI",
+    analyses: [
+      "Acidità",
+      "Polifenoli totali",
+      "Numero di perossidi",
+      "Analisi spettrofotometrica nell'ultravioletto",
+    ],
+  },
+];
 ---
 
 <Layout title="Chi Siamo">
@@ -205,16 +279,32 @@ import Layout from "../layouts/Layout.astro";
         </div>
 
         <div>
-          <div class="text-2xl">VINI</div>
-          <div class="flex flex-wrap gap-4">
-            {
-              [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, i) => (
-                <div class="rounded-full bg-slate-200 p-1 px-3">
-                  Analisi chimico-fisiche
+          {
+            analysis.map(({ name, analyses }) => {
+              // Divide the analyses array into two groups
+              const halfLength = Math.ceil(analyses.length / 2);
+              const firstHalf = analyses.slice(0, halfLength);
+              const secondHalf = analyses.slice(halfLength);
+
+              return (
+                <div class="py-10">
+                  <h3 class=" pb-6 text-center text-2xl uppercase">{name}</h3>
+                  <div class="flex justify-center gap-40">
+                    <ul class="flex w-72 list-inside list-disc flex-col gap-2">
+                      {firstHalf.map((analysis) => (
+                        <li class="ml-6 -indent-6">{analysis}</li>
+                      ))}
+                    </ul>
+                    <ul class="flex w-72 list-inside list-disc flex-col gap-2">
+                      {secondHalf.map((analysis) => (
+                        <li class="ml-6 -indent-6">{analysis}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              ))
-            }
-          </div>
+              );
+            })
+          }
         </div>
       </div>
     </div>
