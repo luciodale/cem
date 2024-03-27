@@ -1,8 +1,8 @@
 ---
 import { navLinks } from "../globals";
+import { Facebook, Instagram, LinkedIn, YouTube } from "./Icons";
 
 const currentHref = Astro.url.pathname;
-console.log(navLinks);
 ---
 
 <footer class="mt-20 w-full bg-slate-100 shadow">
@@ -12,7 +12,7 @@ console.log(navLinks);
         href="/"
         class="mb-4 flex items-center space-x-3 sm:mb-0 rtl:space-x-reverse"
       >
-        <img src="/logo.svg" class="w-28" alt="Cem Logo" />
+        <img src="/logo.svg" class="w-20" alt="Cem Logo" />
       </a>
       <ul class="mb-6 flex flex-wrap items-center text-sm font-medium sm:mb-0">
         {
@@ -35,8 +35,35 @@ console.log(navLinks);
           })
         }
       </ul>
+      <div
+        class="mb-6 flex flex-wrap items-baseline gap-4 text-sm font-medium sm:mb-0"
+      >
+        <a
+          href="https://www.facebook.com/centroenologicomeridionale"
+          target="_blank"
+        >
+          <Facebook className="h-6 w-6 fill-black hover:fill-orange-500" />
+        </a>
+        <a
+          href="https://www.instagram.com/centroenologicomeridionale/"
+          target="_blank"
+        >
+          <Instagram className="h-6 w-6 fill-black hover:fill-orange-500" />
+        </a>
+        <a
+          href="https://www.linkedin.com/company/centroenologicomeridionale/"
+          target="_blank"
+        >
+          <LinkedIn className="h-6 w-6 fill-black hover:fill-orange-500" />
+        </a>
+        <a
+          href="https://www.youtube.com/channel/UCV4EX3HzsaEHEwToFciDvvg"
+          target="_blank"
+        >
+          <YouTube className="h-6 w-6 fill-black hover:fill-orange-500" />
+        </a>
+      </div>
     </div>
-    <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
     <span class="block text-sm text-gray-500 sm:text-center"
       >© <span id="current-year"></span>
       <a href="https://flowbite.com/" class="hover:underline">CEM™</a>. Tutti i
