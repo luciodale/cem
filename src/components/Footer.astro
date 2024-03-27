@@ -1,0 +1,54 @@
+---
+import { navLinks } from "../globals";
+
+const currentHref = Astro.url.pathname;
+console.log(navLinks);
+---
+
+<footer class="mt-20 w-full bg-slate-100 shadow">
+  <div class="mx-auto w-full max-w-screen-xl md:py-8">
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <a
+        href="/"
+        class="mb-4 flex items-center space-x-3 sm:mb-0 rtl:space-x-reverse"
+      >
+        <img src="/logo.svg" class="w-28" alt="Cem Logo" />
+      </a>
+      <ul class="mb-6 flex flex-wrap items-center text-sm font-medium sm:mb-0">
+        {
+          navLinks.map((navLink) => {
+            return (
+              <li>
+                <a
+                  href={navLink.href}
+                  class:list={[
+                    "me-4 hover:underline md:me-6",
+                    currentHref === navLink.href
+                      ? "text-gray-900"
+                      : "text-gray-700",
+                  ]}
+                >
+                  {navLink.name}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+    <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+    <span class="block text-sm text-gray-500 sm:text-center"
+      >© <span id="current-year"></span>
+      <a href="https://flowbite.com/" class="hover:underline">CEM™</a>. Tutti i
+      Diritti Riservati.</span
+    >
+  </div>
+  <script>
+    const yearNode = document.getElementById("current-year");
+
+    if (yearNode) {
+      console.log(yearNode);
+      yearNode.innerHTML = new Date().getFullYear().toString();
+    }
+  </script>
+</footer>
