@@ -1,12 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
+const accrediaLink =
+  "https://services.accredia.it/accredia_labsearch.jsp?ID_LINK=1734&area=310&numeroaccr=0336&classification=A&isRestricted=false&dipartimento=L";
+
 const certications = [
   {
     title: "Accreditamento ACCREDIA n° 336",
     description:
       "(Ente Italiano Per L’accreditamento Dei Laboratori) per le analisi elencate nel sito del ACCREDIA",
-    link: "https://services.accredia.it/accredia_labsearch.jsp?ID_LINK=1734&area=310&numeroaccr=0336&classification=A&isRestricted=false&dipartimento=L",
+
+    link: accrediaLink,
     linkCaption: "Visita Pagina",
   },
   {
@@ -74,11 +78,13 @@ const certications = [
       }
     </div>
     <div class="mx-auto flex max-w-5xl py-10">
-      <img
-        src="/images/accredia-logo.png"
-        alt="Accredia Logo"
-        class="w-1/4 flex-shrink-0"
-      />
+      <a class="w-1/4 flex-shrink-0" href={accrediaLink} target="_blank">
+        <img
+          src="/images/accredia-logo.png"
+          alt="Accredia Logo"
+          class="w-full"
+        />
+      </a>
       <img src="/images/ilac-logo.png" alt="" class="w-1/4 flex-shrink-0" />
       <img
         src="/images/ministro-agricoltura-logo.svg"

@@ -1,51 +1,8 @@
 ---
+import { SliderHomepage } from "../components/Slider";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to CEM.">
-  <main class="bg-[url('/images/stains.svg')] bg-no-repeat">
-    <div
-      class="flex h-full flex-col items-center justify-center gap-6 py-6 font-century"
-    >
-      <img class="w-44" src="/logo.svg" alt="" />
-      <div class="text-3xl font-bold uppercase">sito in manutenzione</div>
-      <div>Torneremo presto online.</div>
-
-      <div class="flex flex-col gap-6 md:flex-row">
-        <div class="flex flex-col gap-4">
-          <img
-            class="h-72 w-72"
-            src="/images/centro-enologico-meridionale.jpeg"
-            alt=""
-          />
-          <div class="flex flex-col gap-1">
-            <div class="text-xl font-bold">Centro Enologico Meridionale</div>
-            <div class="flex items-center gap-1">
-              <img class="w-5" src="/images/phone.svg" alt="" />
-              <div>0859031303</div>
-            </div>
-            <div class="flex items-center gap-1">
-              <img class="w-5" src="/images/email.svg" alt="" />
-              <a href="mailto:info@cem-group.it">info@cem-group.it</a>
-            </div>
-          </div>
-        </div>
-        <div class="flex flex-col gap-4">
-          <img class="h-72 w-72" src="/images/cem-service.jpeg" alt="" />
-          <div class="flex flex-col gap-1">
-            <div class="text-xl font-bold">CEM Service</div>
-            <div class="flex items-center gap-1">
-              <img class="w-5" src="/images/phone.svg" alt="" />
-              <div>0859032382</div>
-            </div>
-            <div class="flex items-center gap-1">
-              <img class="w-5" src="/images/email.svg" alt="" />
-              <a href="mailto:info@cem-group.it">ortona@caacanapa.it</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img class="w-52" src="/images/accredia.png" alt="" />
-    </div>
-  </main>
+  <SliderHomepage client:only />
 </Layout>

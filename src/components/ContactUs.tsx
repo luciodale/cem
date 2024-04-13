@@ -1,6 +1,6 @@
 export function ContactUs() {
   return (
-    <section className="bg-slate-500 text-white">
+    <section className="bg-gray-400 text-white">
       <div className="mx-auto max-w-screen-sm px-4 py-8 lg:py-8">
         <h2 className="mb-4 text-center text-2xl font-bold uppercase    ">
           Scrivici

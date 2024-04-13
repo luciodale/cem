@@ -27,41 +27,43 @@ const elements = [
 
 function ProgettazioneContent() {
   return (
-    <div className="flex flex-col gap-10 p-20 text-xl">
-      <div>
-        La divisione “Progetti” si occupa di pianificare e coordinare la
-        realizzazione di impianti produttivi per aziende vitivinicole, gestendo
-        anche le pratiche e i bandi di finanziamento per l’accesso ai fondi
-        europei, che permettono di sostenere gli investimenti e sono legati, in
-        particolare:
+    <div className="">
+      <div className="flex flex-col gap-10 p-20 text-xl">
+        <div>
+          La divisione “Progetti” si occupa di pianificare e coordinare la
+          realizzazione di impianti produttivi per aziende vitivinicole,
+          gestendo anche le pratiche e i bandi di finanziamento per l’accesso ai
+          fondi europei, che permettono di sostenere gli investimenti e sono
+          legati, in particolare:
+        </div>
+        <ul className="flex list-inside list-disc flex-col gap-4">
+          <li className="ml-6 -indent-6">
+            all’OCM Vino (Organizzazione Comune del Mercato Vitivinicolo),
+            ovvero la regolamentazione unica dell’Unione Europea che disciplina
+            i finanziamenti al comparto vitivinicolo
+          </li>
+          <li className="ml-6 -indent-6">
+            al PSR (Programma di Sviluppo Rurale), un altro meccanismo di
+            finanziamento utilizzato dagli Stati membri dell’UE
+          </li>
+        </ul>
+        <div>
+          Con più di 120 progetti realizzati per oltre 200 milioni di euro
+          investiti, il lavoro di progettazione e di interfaccia con gli Enti
+          Territoriali svolto da Cem Service contribuisce in maniera decisiva
+          allo sviluppo del settore vitivinicolo.
+        </div>
+        <ul className="flex list-inside list-disc flex-col gap-4">
+          <li className="ml-6 -indent-6">Studio di fattibilità</li>
+          <li className="ml-6 -indent-6">Business-Plan</li>
+          <li className="ml-6 -indent-6">Progettazione logistica</li>
+          <li className="ml-6 -indent-6">Progettazione impianti tecnologici</li>
+          <li className="ml-6 -indent-6">Progettazione architettonica</li>
+          <li className="ml-6 -indent-6">
+            Studio, presentazione e collaudo di Pratiche di Finanziamento
+          </li>
+        </ul>
       </div>
-      <ul className="flex list-inside list-disc flex-col gap-4">
-        <li className="ml-6 -indent-6">
-          all’OCM Vino (Organizzazione Comune del Mercato Vitivinicolo), ovvero
-          la regolamentazione unica dell’Unione Europea che disciplina i
-          finanziamenti al comparto vitivinicolo
-        </li>
-        <li className="ml-6 -indent-6">
-          al PSR (Programma di Sviluppo Rurale), un altro meccanismo di
-          finanziamento utilizzato dagli Stati membri dell’UE
-        </li>
-      </ul>
-      <div>
-        Con più di 120 progetti realizzati per oltre 170 milioni di euro
-        investiti, il lavoro di progettazione e di interfaccia con gli Enti
-        Territoriali svolto da Cem Service contribuisce in maniera decisiva allo
-        sviluppo del settore vitivinicolo.
-      </div>
-      <ul className="flex list-inside list-disc flex-col gap-4">
-        <li className="ml-6 -indent-6">Studio di fattibilità</li>
-        <li className="ml-6 -indent-6">Business-Plan</li>
-        <li className="ml-6 -indent-6">Progettazione logistica</li>
-        <li className="ml-6 -indent-6">Progettazione impianti tecnologici</li>
-        <li className="ml-6 -indent-6">Progettazione architettonica</li>
-        <li className="ml-6 -indent-6">
-          Studio, presentazione e collaudo di Pratiche di Finanziamento
-        </li>
-      </ul>
     </div>
   );
 }
@@ -158,7 +160,7 @@ export function BannerCemService() {
 
   return (
     <>
-      <div className="flex cursor-pointer bg-slate-500 text-white">
+      <div className="flex cursor-pointer bg-gray-400 text-white">
         {elements.map(({ id, title }) => {
           const activeTab = tab === id;
           const iconStyle = classNames(

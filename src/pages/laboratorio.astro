@@ -4,25 +4,27 @@ import Layout from "../layouts/Layout.astro";
 
 const analysis = [
   {
-    name: "analisi di processo",
+    name: "Analisi di processo",
     analyses: [
-      "controlli preventivi e contestuali alle fermentazioni, solforose, acidità ed acidi organici, estratto, colore, antociani, polifenoli.",
-      "catechine",
+      "controlli preventivi e contestuali alle fermentazioni",
+      "solforose, acidità ed acidi organici",
+      "estratto, colore, antociani, polifenoli, catechine",
       "flavani, flavonoli (UV/Vis-HPLC)",
       "glutatione",
     ],
   },
   {
-    name: "certificazioni ufficiali",
+    name: "Certificazioni ufficiali",
     analyses: [
       "esportazione",
       "commercializzazione, concorsi",
       "esami chimico-fisici di idoneità DOP e IGP",
-      "sottoprodotti di vinificazione: fecce e vinacce (Agenzia delle Entrate)",
+      "sottoprodotti di vinificazione: fecce e vinacce (Agenzia delle Dogane)",
+      "tabella nutrizionale",
     ],
   },
   {
-    name: "contaminanti",
+    name: "Contaminanti",
     analyses: [
       "metalli pesanti",
       "metanolo",
@@ -35,28 +37,28 @@ const analysis = [
     ],
   },
   {
-    name: "prove enologiche e saggi",
+    name: "Prove enologiche e saggi",
     analyses: [
-      "stabilità proteica",
-      "tartarica, mettalica, del colore, riboflavina",
+      "stabilità proteica, tartarica, del colore",
+      "riboflavina",
       "dosaggi ausiliari stabilizzanti (bentonite, CMC, poliaspartato)",
       "indice di ossidabilità, pinking",
     ],
   },
   {
-    name: "composti volatili",
+    name: "Composti volatili",
     analyses: ["anidride carbonica, ossigeno", "fenoli volatili"],
   },
   {
-    name: "allergeni",
+    name: "Allergeni",
     analyses: ["caseina, albumina, istamina"],
   },
   {
-    name: "anioni e cationi",
+    name: "Anioni e cationi",
     analyses: ["solfati, cloruri, fosfati, nitrati", "K, Ca, Mg, Na, Li"],
   },
   {
-    name: "olio di oliva",
+    name: "Olio di oliva",
     subtitle: "certificazioni ufficiali",
     analyses: [
       "esportazione",
@@ -115,7 +117,7 @@ const analysis = [
     </div>
 
     <div class="relative w-full text-white">
-      <div class="absolute h-full w-full bg-slate-500"></div>
+      <div class="absolute h-full w-full bg-gray-400"></div>
 
       <div class="relative z-10 flex gap-20 p-20">
         <div class="flex w-1/3 flex-col gap-6">
@@ -242,19 +244,26 @@ const analysis = [
     </div>
 
     <div class="p-20">
-      <h2 class="pb-10 text-center text-3xl uppercase">Anlisi</h2>
+      <h2 class="pb-10 text-center text-3xl uppercase">Analisi</h2>
 
       <div class="mx-auto grid max-w-5xl grid-cols-2 gap-10">
         {
           analysis.map(({ name, analyses }) => {
             return (
-              <div class=" py-10">
-                <h3 class="pb-6 text-2xl uppercase">{name}</h3>
-                <ul class="list-inside list-disc">
-                  {analyses.map((analysis) => (
-                    <li class="ml-6 -indent-6">{analysis}</li>
-                  ))}
-                </ul>
+              <div class="mx-auto flex w-96 flex-col justify-between rounded-lg border bg-slate-100 p-6 shadow-lg">
+                <div>
+                  <h5 class="mb-2 text-2xl font-semibold tracking-tight">
+                    {name}
+                  </h5>
+
+                  <p class="mb-3 font-normal text-slate-600">
+                    <ul class="list-inside list-disc">
+                      {analyses.map((analysis) => (
+                        <li class="ml-6 -indent-6">{analysis}</li>
+                      ))}
+                    </ul>
+                  </p>
+                </div>
               </div>
             );
           })
@@ -262,9 +271,11 @@ const analysis = [
       </div>
     </div>
     <div class="p-10 text-center italic">
-      Per l'elenco completo delle analysis si rimanda al
-      <a class="text-blue-700 underline" href="/" target="_blank"
-        >sito di ACCREDIA</a
+      Per l'elenco aggiornato delle prove accreditate si rimanda al
+      <a
+        class="text-blue-700 underline"
+        href="https://services.accredia.it/accredia_labsearch.jsp?ID_LINK=1734&area=310&numeroaccr=0336&classification=A&isRestricted=false&dipartimento=L"
+        target="_blank">sito di ACCREDIA</a
       >
     </div>
   </div>
