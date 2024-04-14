@@ -26,14 +26,6 @@ const slides = [
     customStyle: { backgroundPosition: "center" },
   },
   {
-    title: "Chi Siamo",
-    description: "Dal 1971 al servizio dell'enologia.",
-    link: "/chi-siamo",
-    linkLabel: "Scopri la nostra storia",
-    image: "bg-[url('/images/italo.jpg')]",
-    customStyle: { backgroundPosition: "center" },
-  },
-  {
     title: "Certificazioni",
     description: "Laboratorio certificato ACCREDIA con 63 prove accreditate.",
     link: "/certificazioni",
@@ -42,12 +34,20 @@ const slides = [
     customStyle: { backgroundPosition: "center" },
   },
   {
+    title: "Chi Siamo",
+    description: "Dal 1971 al servizio dell'enologia.",
+    link: "/chi-siamo",
+    linkLabel: "Scopri la nostra storia",
+    image: "bg-[url('/images/italo.jpg')]",
+    customStyle: { backgroundPosition: "center" },
+  },
+  {
     title: "CEM Service",
     description:
-      "Servizi di consulenza e assistenza tecnica per la tua azienda.",
+      "Cosulenza in servizi tecnici, legislativi, amministrativi e sportello CAA.",
     link: "/cem-service",
     linkLabel: "Scopri di più",
-    image: "bg-[url('images/home3.jpg')]",
+    image: "bg-[url('images/vineyard.jpg')]",
     customStyle: { backgroundPosition: "center" },
   },
 ] satisfies TSlide[];
