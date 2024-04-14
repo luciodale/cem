@@ -30,7 +30,7 @@ const slides = [
     description: "Laboratorio certificato ACCREDIA con 63 prove accreditate.",
     link: "/certificazioni",
     linkLabel: "Scopri di più",
-    image: "bg-[url('images/signature.png')]",
+    image: "bg-[url('/images/signature.png')]",
     customStyle: { backgroundPosition: "center" },
   },
   {
@@ -47,7 +47,7 @@ const slides = [
       "Cosulenza in servizi tecnici, legislativi, amministrativi e sportello CAA.",
     link: "/cem-service",
     linkLabel: "Scopri di più",
-    image: "bg-[url('images/vineyard.jpg')]",
+    image: "bg-[url('/images/vineyard.jpg')]",
     customStyle: { backgroundPosition: "center" },
   },
 ] satisfies TSlide[];
