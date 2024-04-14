@@ -258,9 +258,9 @@ const analysis = [
 
                   <p class="mb-3 font-normal text-slate-600">
                     <ul class="list-inside list-disc">
-                      {analyses.map((analysis) => (
-                        <li class="ml-6 -indent-6">{analysis}</li>
-                      ))}
+                      {analyses.map((analysis) => {
+                        return <li class="ml-6 -indent-6">{analysis}</li>;
+                      })}
                     </ul>
                   </p>
                 </div>
