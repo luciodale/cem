@@ -1,14 +1,7 @@
 import classNames from "classnames";
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 import { Bulb, Leaf, Whiteboard } from "./Icons";
-
-type TBannerContent = {
-  title: string;
-  subtitle: string;
-  icon: ReactNode;
-};
-
-type TBanner = { elements: [TBannerContent, TBannerContent, TBannerContent] };
+import { Link } from "./Link";
 
 const elements = [
   {
@@ -27,10 +20,16 @@ const elements = [
 
 function ProgettazioneContent() {
   return (
-    <div className="flex gap-10 p-20">
-      <div className=" w-1/2 flex-shrink-0 bg-[url('/images/portrait-vineyard.jpeg')] bg-cover bg-bottom"></div>
-      <div>
-        <div className="flex flex-col gap-10 p-20 text-xl">
+    <div className="flex gap-10 xl:gap-28 p-4 pt-10 md:p-20">
+      <div className="hidden lg:block lg:w-1/2 flex-shrink-0 lg:bg-[url('/images/portrait-vineyard.jpeg')] bg-cover bg-bottom"></div>
+      <div className="relative">
+        <img
+          className="absolute lg:hidden top-0 w-full object-cover h-full"
+          src="/images/portrait-vineyard.jpeg"
+          alt=""
+        />
+        <div className="absolute inset-6 top-0 left-0 backdrop-blur-sm lg:backdrop-blur-none h-full w-full bg-black/80 lg:bg-transparent"></div>
+        <div className="flex z-10 p-10 text-white lg:text-slate-600 relative flex-col gap-10 xl:px-0 xl:py-20 text-lg lg:text-xl">
           <div>
             La divisione “Progetti” si occupa di pianificare e coordinare la
             realizzazione di impianti produttivi per aziende vitivinicole,
@@ -67,6 +66,9 @@ function ProgettazioneContent() {
               Studio, presentazione e collaudo di Pratiche di Finanziamento
             </li>
           </ul>
+          <div className="pt-6">
+            <Link href="#service" label="Torna alla selezione" />
+          </div>
         </div>
       </div>
     </div>
@@ -75,9 +77,15 @@ function ProgettazioneContent() {
 
 function ConsulenzaContent() {
   return (
-    <div className="flex gap-10 p-20">
-      <div>
-        <div className="flex flex-col gap-10 p-20 text-xl">
+    <div className="flex gap-10 xl:gap-28 p-4 pt-10 md:p-20">
+      <div className="relative">
+        <img
+          className="absolute lg:hidden top-0 w-full object-cover h-full"
+          src="/images/portrait-strategy.jpeg"
+          alt=""
+        />
+        <div className="absolute inset-6 top-0 left-0 backdrop-blur-sm lg:backdrop-blur-none h-full w-full bg-black/80 lg:bg-transparent"></div>
+        <div className="flex z-10 p-10 text-white lg:text-slate-600 relative flex-col gap-10 xl:px-0 xl:py-20 text-lg lg:text-xl">
           <div>
             Attraverso la sua attività di consulenza in servizi scientifici,
             tecnici, legislativi e amministrativi, Cem Service fornisce alle
@@ -107,19 +115,29 @@ function ConsulenzaContent() {
               mondo del vino
             </li>
           </ul>
+          <div className="pt-6">
+            <Link href="#service" label="Torna alla selezione" />
+          </div>
         </div>
       </div>
-      <div className=" w-1/2 flex-shrink-0 bg-[url('/images/portrait-strategy.jpeg')] bg-cover bg-bottom"></div>
+
+      <div className="hidden lg:block lg:w-1/2 flex-shrink-0 lg:bg-[url('/images/portrait-strategy.jpeg')] bg-cover bg-bottom"></div>
     </div>
   );
 }
 
 function CAAContent() {
   return (
-    <div className="flex gap-10 p-20">
-      <div className=" w-1/2 flex-shrink-0 bg-[url('/images/portrait-help.jpeg')] bg-cover bg-bottom"></div>
-      <div>
-        <div className="flex flex-col gap-10 p-20 text-xl">
+    <div className="flex gap-10 xl:gap-28 p-4 pt-10 md:p-20">
+      <div className="hidden lg:block lg:w-1/2 flex-shrink-0 lg:bg-[url('/images/portrait-help.jpeg')] bg-cover bg-bottom"></div>
+      <div className="relative">
+        <img
+          className="absolute lg:hidden top-0 w-full object-cover h-full"
+          src="/images/portrait-help.jpeg"
+          alt=""
+        />
+        <div className="absolute inset-6 top-0 left-0 backdrop-blur-sm lg:backdrop-blur-none h-full w-full bg-black/80 lg:bg-transparent"></div>
+        <div className="flex z-10 p-10 text-white lg:text-slate-600 relative flex-col gap-10 xl:px-0 xl:py-20 text-lg lg:text-xl">
           <div>
             In qualità di Centro Assistenza Agricola C.A.N.A.P.A. la società Cem
             Service è autorizzata da AGEA (Agenzia per le Erogazioni in
@@ -159,11 +177,36 @@ function CAAContent() {
             </li>
             <li className="ml-6 -indent-6">Servizi catastali</li>
           </ul>
+          <div className="pt-6">
+            <Link href="#service" label="Torna alla selezione" />
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
+function Tab({
+  title,
+  icon,
+  className,
+  onClick,
+}: {
+  title: string;
+  icon: JSX.Element | null;
+  className: string;
+  onClick?: () => void;
+}) {
+  return (
+    <div onClick={onClick} className={className}>
+      <div className="flex h-full lg:flex-col items-center lg:justify-center gap-4 uppercase">
+        <div className="flex-shrink-0">{icon}</div>
+        <div className={"lg:text-center text-xl font-bold"}>{title}</div>
+      </div>
+    </div>
+  );
+}
+
 export function BannerCemService() {
   const [tab, setTab] = useState<"progettazione" | "consulenza" | "caa">(
     "progettazione",
@@ -176,46 +219,42 @@ export function BannerCemService() {
   };
 
   return (
-    <>
-      <div className="flex cursor-pointer justify-center">
-        <div className="grid grid-cols-3 gap-10">
+    <div>
+      <div className="flex cursor-pointer justify-center px-4 md:px-20">
+        <div
+          id="service"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-10"
+        >
           {elements.map(({ id, title }) => {
             const activeTab = tab === id;
-            const iconStyle = classNames(
-              activeTab ? "stroke-white" : "stroke-white",
-              "w-20 h-20",
-            );
+            const iconStyle = "stroke-white w-10 h-10 lg:w-20 lg:h-20";
+
             return (
-              <div
+              <Tab
                 key={id}
-                onClick={() => setTab(id)}
+                title={title}
+                icon={
+                  id === "progettazione" ? (
+                    <Whiteboard className={iconStyle} />
+                  ) : id === "consulenza" ? (
+                    <Bulb className={iconStyle} />
+                  ) : id === "caa" ? (
+                    <Leaf className={iconStyle} />
+                  ) : null
+                }
                 className={classNames(
-                  "flex flex-col gap-6 px-10 py-10 transition-all",
-                  tab === id
+                  "flex flex-col gap-6 p-2 lg:p-10 transition-all",
+                  activeTab
                     ? "rounded-3xl bg-cem text-white"
                     : "bg-gray-400 text-white",
                 )}
-              >
-                <div className="flex h-full flex-col items-center justify-center gap-4 uppercase">
-                  <div className="flex-shrink-0">
-                    {id === "progettazione" ? (
-                      <Whiteboard className={iconStyle} />
-                    ) : id === "consulenza" ? (
-                      <Bulb className={iconStyle} />
-                    ) : id === "caa" ? (
-                      <Leaf className={iconStyle} />
-                    ) : null}
-                  </div>
-                  <div className={classNames("text-center text-xl font-bold")}>
-                    {title}
-                  </div>
-                </div>
-              </div>
+                onClick={() => setTab(id)}
+              />
             );
           })}
         </div>
       </div>
-      <div className="min-h-[100dvh]">{tabContent[tab]}</div>
-    </>
+      <div>{tabContent[tab]}</div>
+    </div>
   );
 }
