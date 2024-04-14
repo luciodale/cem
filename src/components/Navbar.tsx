@@ -51,8 +51,8 @@ export default function Navbar({ currentHref }: { currentHref: string }) {
             key={href}
             href={href}
             className={classNames(
-              { "text-yellow-500": currentHref === href },
-              "hidden w-1/6 rounded py-2 text-center text-xl uppercase text-gray-900 hover:bg-gray-100 lg:block lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-gray-700",
+              { "font-bold text-cem": currentHref === href },
+              "hidden w-1/6 rounded py-2 text-center text-xl uppercase  hover:bg-gray-100 lg:block lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-cem",
             )}
           >
             {name}
