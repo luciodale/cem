@@ -60,7 +60,6 @@ function SliderEntry({
   customStyle,
   linkLabel,
 }: TSlide) {
-  console.log(customStyle, "yoo");
   return (
     <div>
       <div
