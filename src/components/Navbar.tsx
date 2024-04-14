@@ -73,7 +73,6 @@ export default function Navbar({ currentHref }: { currentHref: string }) {
       >
         {navLinks.map(({ name, href }) => {
           const active = currentHref === href;
-          console.log({ active, currentHref, href });
           return (
             <a
               key={href}

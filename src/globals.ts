@@ -3,22 +3,22 @@ export const navbarHeight = 140;
 export const navLinks = [
   {
     name: "Chi Siamo",
-    href: "/chi-siamo",
+    href: "/chi-siamo/",
   },
   {
     name: "Certificazioni",
-    href: "/certificazioni",
+    href: "/certificazioni/",
   },
   {
     name: "Laboratorio",
-    href: "/laboratorio",
+    href: "/laboratorio/",
   },
   {
     name: "CEM Service",
-    href: "/cem-service",
+    href: "/cem-service/",
   },
   {
     name: "Contatti",
-    href: "/contatti",
+    href: "/contatti/",
   },
 ];
