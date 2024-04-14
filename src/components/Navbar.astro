@@ -3,4 +3,4 @@ import NavbarTSX from "./Navbar";
 const currentHref = Astro.url.pathname;
 ---
 
-<NavbarTSX client:only {currentHref} />
+<NavbarTSX client:visible {currentHref} />
