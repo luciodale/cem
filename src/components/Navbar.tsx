@@ -78,7 +78,7 @@ export default function Navbar({ currentHref }: { currentHref: string }) {
               key={href}
               className={classNames(
                 "flex items-center text-xl text-white transition-colors first-of-type:pt-8",
-                active ? "font-bold" : "text-white hover:text-cem",
+                active ? "font-bold" : "text-white ",
               )}
               href={href}
             >

@@ -1,3 +1,4 @@
+import classnames from "classnames";
 import type { ComponentProps } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
@@ -5,59 +6,82 @@ import "slick-carousel/slick/slick.css";
 import { navbarHeight } from "../globals";
 import { Link } from "./Link";
 
+type TSlide = {
+  title: string;
+  description: string;
+  link: string;
+  linkLabel: string;
+  image: string;
+  customStyle: React.CSSProperties;
+};
+
 const slides = [
   {
     title: "Laboratorio",
     description:
       " Da oltre 50 anni il laboratorio enologico all'avanguardia, affidabile e indipendente.",
     link: "/laboratorio",
-    image: "bg-[url('images/home2.jpg')]",
+    linkLabel: "Scopri di più",
+    image: "bg-[url('/images/home2.jpg')]",
+    customStyle: { backgroundPosition: "center" },
   },
   {
     title: "Chi Siamo",
-    description: "Scopri di più su di noi e sulla nostra storia.",
+    description: "Dal 1971 al servizio dell'enologia.",
     link: "/chi-siamo",
-    image: "bg-[url('images/home.jpg)']",
+    linkLabel: "Scopri la nostra storia",
+    image: "bg-[url('/images/italo.jpg')]",
+    customStyle: { backgroundPosition: "center" },
   },
   {
     title: "Certificazioni",
-    description:
-      "Certificazioni di qualità e sicurezza alimentare per la tua azienda.",
+    description: "Laboratorio certificato ACCREDIA con 63 prove accreditate.",
     link: "/certificazioni",
-    image: "bg-[url('images/home.jpg')]",
+    linkLabel: "Scopri di più",
+    image: "bg-[url('images/signature.png')]",
+    customStyle: { backgroundPosition: "center" },
   },
   {
     title: "CEM Service",
     description:
       "Servizi di consulenza e assistenza tecnica per la tua azienda.",
     link: "/cem-service",
+    linkLabel: "Scopri di più",
     image: "bg-[url('images/home3.jpg')]",
+    customStyle: { backgroundPosition: "center" },
   },
-];
+] satisfies TSlide[];
 
 function SliderEntry({
   title,
   description,
   link,
-}: {
-  title: string;
-  description: string;
-  link: string;
-}) {
+  image,
+  customStyle,
+  linkLabel,
+}: TSlide) {
+  console.log(customStyle, "yoo");
   return (
     <div>
       <div
         style={{
           height: `calc(100dvh - ${navbarHeight}px`,
+          ...customStyle,
         }}
-        className="flex flex-col items-center justify-end gap-4 overflow-hidden bg-[url('images/home2.jpg')] bg-cover
-          bg-center bg-no-repeat pb-10"
+        className={classnames(
+          image,
+          "flex flex-col items-center justify-end gap-4 overflow-hidden bg-cover bg-no-repeat pb-10",
+        )}
       >
         <div className="flex flex-col gap-4 bg-white bg-opacity-70 p-10">
-          <h2 className="text-5xl uppercase">{title}</h2>
-          <p className="text-3xl">{description}</p>
-          <div className="pt-4">
-            <Link label="Scopri di più" href={link} />
+          <h2 className="text-center text-2xl uppercase sm:text-left sm:text-5xl">
+            {title}
+          </h2>
+          <p className="text-center text-xl sm:text-left sm:text-3xl">
+            {description}
+          </p>
+          <div className="mx-auto pt-4 sm:mx-0">
+            <Link label={linkLabel} href={link} />
           </div>
         </div>
       </div>
@@ -68,7 +92,7 @@ function SliderEntry({
 export function SliderHomepage() {
   const settings = {
     infinite: true,
-    autoplay: true,
+    autoplay: false,
     dots: true,
     autoplaySpeed: 4000,
     arrows: false,
@@ -84,6 +108,9 @@ export function SliderHomepage() {
             title={slide.title}
             description={slide.description}
             link={slide.link}
+            image={slide.image}
+            customStyle={slide.customStyle}
+            linkLabel={slide.linkLabel}
           />
         ))}
       </Slider>
