@@ -243,31 +243,32 @@ const analysis = [
       </div>
     </div>
 
-    <div class="p-20">
-      <h2 class="pb-10 text-center text-3xl uppercase">Analisi</h2>
+    <div class="py-20">
+      <h2 class="text-center text-3xl uppercase">Analisi</h2>
+      <div class="flex justify-center">
+        <div class="grid grid-cols-1 justify-center gap-10 p-10 lg:grid-cols-2">
+          {
+            analysis.map(({ name, analyses }) => {
+              return (
+                <div class="mx-auto flex w-96 flex-col justify-between rounded-lg border bg-slate-100 p-6 shadow-lg">
+                  <div>
+                    <h5 class="mb-2 text-2xl font-semibold tracking-tight">
+                      {name}
+                    </h5>
 
-      <div class="mx-auto grid max-w-5xl grid-cols-2 gap-10">
-        {
-          analysis.map(({ name, analyses }) => {
-            return (
-              <div class="mx-auto flex w-96 flex-col justify-between rounded-lg border bg-slate-100 p-6 shadow-lg">
-                <div>
-                  <h5 class="mb-2 text-2xl font-semibold tracking-tight">
-                    {name}
-                  </h5>
-
-                  <p class="mb-3 font-normal text-slate-600">
-                    <ul class="list-inside list-disc">
-                      {analyses.map((analysis) => {
-                        return <li class="ml-6 -indent-6">{analysis}</li>;
-                      })}
-                    </ul>
-                  </p>
+                    <p class="mb-3 font-normal text-slate-600">
+                      <ul class="list-inside list-disc">
+                        {analyses.map((analysis) => {
+                          return <li class="ml-6 -indent-6">{analysis}</li>;
+                        })}
+                      </ul>
+                    </p>
+                  </div>
                 </div>
-              </div>
-            );
-          })
-        }
+              );
+            })
+          }
+        </div>
       </div>
     </div>
     <div class="p-10 text-center italic">
