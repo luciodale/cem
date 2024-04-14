@@ -1,0 +1,127 @@
+---
+import { CertificateIcon, GearIcon, GrapeIcon } from "../components/Icons";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Chi Siamo">
+  <main class="text-slate-600">
+    <div
+      class="flex flex-col items-center justify-center gap-10 p-4 pb-20 xl:flex-row xl:gap-36 xl:p-20 xl:pb-36"
+    >
+      <div
+        class="aspect-video w-full flex-shrink-0 bg-[url('/images/italo.jpg')] bg-cover bg-center xl:aspect-square xl:w-1/2 max-w-xl"
+      >
+      </div>
+
+      <div class="flex flex-col gap-10 text-xl leading-normal">
+        <div>
+          Il Centro Enologico Meridionale, nato nel 1971 da un’intuizione
+          dell’enologo Italo De Luca, riunisce una squadra di professionisti in
+          grado di offrire servizi qualificati alle aziende vinicole, in tutti
+          gli aspetti della filiera vitivinicola:
+        </div>
+        <div class="flex flex-col gap-10">
+          <div class="flex gap-6">
+            <p>
+              Effettuazione delle analisi nel laboratorio chimico su vino, uva,
+              mosti, vinacce, fecce di vino, bevande spiritose e olio
+            </p>
+          </div>
+
+          <div class="flex items-center gap-6">
+            <p>Emissione dei relativi certificati di analisi</p>
+          </div>
+
+          <li class="flex items-center gap-6">
+            <p>
+              Consulenza in servizi scientifici, tecnici, legislativi ed
+              amministrativi in materia vitivinicola
+            </p>
+          </li>
+          <li class="flex items-center gap-6">
+            <p>Gestione di progetti di sviluppo nel mondo del vino.</p>
+          </li>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="mx-4 grid gap-10 overflow-scroll rounded-3xl p-4 text-white lg:p-10 xl:mx-20 xl:grid-cols-3 xl:bg-cem"
+    >
+      <div class="flex flex-col gap-6 rounded-2xl bg-cem p-4 xl:p-0">
+        <div class="flex flex-col items-center gap-4 uppercase">
+          <div class="w-20 flex-shrink-0">
+            <GrapeIcon className="fill-none stroke-white" />
+          </div>
+
+          <div class="text-center text-3xl">50 anni di esperienza</div>
+        </div>
+        <p class="text-lg text-center">
+          Decenni di esperienza e conoscenze radicate in campo vitivinicolo
+          rendono il Laboratorio un sicuro punto di riferimento a livello
+          nazionale per le analisi nel settore enologico, e rappresentano una
+          garanzia della correttezza nell’esecuzione delle prove analitiche e
+          nell’interpretazione dei risultati
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-6 rounded-2xl bg-cem p-4 xl:p-0">
+        <div class="flex flex-col items-center gap-4 uppercase">
+          <div class="w-20 flex-shrink-0">
+            <CertificateIcon className="fill-white" />
+          </div>
+
+          <div class="text-center text-3xl">Laboratorio accreditato</div>
+        </div>
+        <p class="text-lg text-center">
+          La qualità delle analisi è certificata dall’accreditamento ACCREDIA.
+          Attualmente, il Laboratorio vanta 47 prove analitiche accreditate nel
+          settore vinicolo e oleicolo
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-6 rounded-2xl bg-cem p-4 xl:p-0">
+        <div class="flex flex-col items-center gap-4 uppercase">
+          <div class="w-20 flex-shrink-0">
+            <GearIcon className="fill-white" />
+          </div>
+
+          <div class="text-center text-3xl">Tecnologia all'Avanguardia</div>
+        </div>
+
+        <p class="text-lg text-center">
+          L’utilizzo di tecnologia avanzata garantisce un eccellente livello di
+          accuratezza delle prove analitiche, e consente un approccio globale
+          all’analisi ed alle soluzioni delle richieste che scaturiscono dal
+          sempre più complesso mondo del vino
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="flex flex-col items-center justify-center gap-10 p-4 pb-20 pt-20 xl:flex-row xl:gap-36 xl:p-36"
+    >
+      <div class="flex flex-col gap-10 text-xl leading-normal">
+        <div>
+          L’attività principale del Centro Enologico Meridionale è il
+          Laboratorio, uno dei più importanti in Italia nel settore del vino e
+          punto di riferimento nazionale per le analisi nel campo enologico,
+          potendo vantare un’esperienza pluridecennale e l’uso di tecnologia
+          all’avan guardia.
+        </div>
+
+        <div>
+          Il Laboratorio accompagna il prodotto lungo tutte le fasi, dall’uva al
+          vino finito, garantendo la sua valorizzazione nel rispetto degli
+          standard di qualità, certificata anche dall’accreditamento ACCREDIA
+          (Ente Italiano per l’Accreditamento), con ben 63 prove analitiche
+          accreditate nel settore vinicolo e oleicolo.
+        </div>
+      </div>
+      <div
+        class="aspect-square w-full flex-shrink-0 bg-[url('/images/centro-enologico-meridionale.jpeg')] bg-cover bg-center xl:w-1/2 xl:max-w-2xl"
+      >
+      </div>
+    </div>
+  </main>
+</Layout>

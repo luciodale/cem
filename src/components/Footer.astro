@@ -1,0 +1,84 @@
+---
+import { navLinks } from "../globals";
+import { Facebook, Instagram, LinkedIn, YouTube } from "./Icons";
+
+const currentHref = Astro.url.pathname;
+---
+
+<footer class="w-full bg-slate-100 shadow">
+  <div
+    class="flex w-full max-w-screen-xl flex-col gap-4 px-10 py-6 md:mx-auto md:py-8"
+  >
+    <div class="gap-4 sm:flex sm:items-center sm:justify-between">
+      <a
+        href="/"
+        class="mb-4 flex items-center justify-center space-x-3 sm:mb-0 md:ml-0 rtl:space-x-reverse"
+      >
+        <img src="/logo.svg" class="w-20" alt="Cem Logo" />
+      </a>
+      <ul
+        class="mb-6 flex flex-wrap items-center justify-center text-sm font-medium sm:mb-0"
+      >
+        {
+          navLinks.map((navLink) => {
+            return (
+              <li>
+                <a
+                  href={navLink.href}
+                  class:list={[
+                    "me-4 hover:underline md:me-6",
+                    currentHref === navLink.href
+                      ? "text-gray-900"
+                      : "text-gray-700",
+                  ]}
+                >
+                  {navLink.name}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+      <div
+        class="mb-6 flex items-baseline justify-center gap-4 text-sm font-medium sm:mb-0"
+      >
+        <a
+          href="https://www.facebook.com/centroenologicomeridionale"
+          target="_blank"
+        >
+          <Facebook className="h-6 w-6 fill-cem hover:fill-black" />
+        </a>
+        <a
+          href="https://www.instagram.com/centroenologicomeridionale/"
+          target="_blank"
+        >
+          <Instagram className="h-6 w-6 fill-cem hover:fill-black" />
+        </a>
+        <a
+          href="https://www.linkedin.com/company/centroenologicomeridionale/"
+          target="_blank"
+        >
+          <LinkedIn className="h-6 w-6 fill-cem hover:fill-black" />
+        </a>
+        <a
+          href="https://www.youtube.com/channel/UCV4EX3HzsaEHEwToFciDvvg"
+          target="_blank"
+        >
+          <YouTube className="h-6 w-6 fill-cem hover:fill-black" />
+        </a>
+      </div>
+    </div>
+    <div class="text-center text-xs text-gray-500">
+      © <span id="current-year"></span>
+      <a href="https://flowbite.com/" class="hover:underline">CEM™</a>. Tutti i
+      Diritti Riservati.
+    </div>
+  </div>
+  <script>
+    const yearNode = document.getElementById("current-year");
+
+    if (yearNode) {
+      yearNode.innerHTML = new Date().getFullYear().toString();
+    }
+  </script>
+</footer>

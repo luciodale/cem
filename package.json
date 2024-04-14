@@ -10,20 +10,30 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.3.1",
-    "@astrojs/tailwind": "^5.0.2",
-    "astro": "^3.6.4",
-    "tailwindcss": "^3.0.24",
-    "typescript": "^5.3.2"
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/react": "^3.3.0",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/ts-plugin": "^1.6.1",
+    "@types/react": "^18.2.78",
+    "@types/react-dom": "^18.2.25",
+    "@types/react-slick": "^0.23.13",
+    "astro": "^4.6.1",
+    "classnames": "^2.5.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.3",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^6.13.1",
-    "eslint": "^8.55.0",
-    "eslint-plugin-astro": "^0.30.0",
-    "prettier": "^3.1.0",
-    "prettier-plugin-astro": "^0.12.2",
-    "prettier-plugin-organize-imports": "^3.2.4",
-    "prettier-plugin-tailwindcss": "^0.5.7"
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-astro": "^0.32.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-organize-imports": "^3.2.4"
   },
   "prettier": {
     "astroAllowShorthand": true,
@@ -40,8 +50,7 @@
     ],
     "plugins": [
       "prettier-plugin-astro",
-      "prettier-plugin-organize-imports",
-      "prettier-plugin-tailwindcss"
+      "prettier-plugin-organize-imports"
     ]
   }
 }

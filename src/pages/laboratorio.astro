@@ -1,0 +1,211 @@
+---
+import { CertificateIcon, GearIcon, GrapeIcon } from "../components/Icons";
+import { Link } from "../components/Link";
+import { navbarHeight } from "../globals";
+import Layout from "../layouts/Layout.astro";
+
+const analysis = [
+  {
+    name: "Analisi di processo",
+    analyses: [
+      "controlli preventivi e contestuali alle fermentazioni",
+      "solforose, acidità ed acidi organici",
+      "estratto, colore, antociani, polifenoli, catechine",
+      "flavani, flavonoli (UV/Vis-HPLC)",
+      "glutatione",
+    ],
+  },
+  {
+    name: "Certificazioni ufficiali",
+    analyses: [
+      "esportazione",
+      "commercializzazione, concorsi",
+      "esami chimico-fisici di idoneità DOP e IGP",
+      "sottoprodotti di vinificazione: fecce e vinacce (Agenzia delle Dogane)",
+      "tabella nutrizionale",
+    ],
+  },
+  {
+    name: "Contaminanti",
+    analyses: [
+      "metalli pesanti",
+      "metanolo",
+      "pesticidi",
+      "glicoli",
+      "ocratossina",
+      "ammine biogene",
+      "ftalati",
+      "bisfenolo A",
+    ],
+  },
+  {
+    name: "Prove enologiche e saggi",
+    analyses: [
+      "stabilità proteica, tartarica, del colore",
+      "riboflavina",
+      "dosaggi ausiliari stabilizzanti (bentonite, CMC, poliaspartato)",
+      "indice di ossidabilità, pinking",
+    ],
+  },
+  {
+    name: "Composti volatili",
+    analyses: ["anidride carbonica, ossigeno", "fenoli volatili"],
+  },
+  {
+    name: "Allergeni",
+    analyses: ["caseina, albumina, istamina"],
+  },
+  {
+    name: "Anioni e cationi",
+    analyses: ["solfati, cloruri, fosfati, nitrati", "K, Ca, Mg, Na, Li"],
+  },
+  {
+    name: "Olio di oliva",
+    subtitle: "certificazioni ufficiali",
+    analyses: [
+      "esportazione",
+      "commercializzazione",
+      "analisi chimico-fisicha di idoneità DOP e IGP",
+    ],
+  },
+];
+---
+
+<Layout title="Laboratorio">
+  <div class="text-slate-600">
+    <div
+      class="flex flex-col items-center justify-center gap-10 p-4 pb-20 xl:flex-row xl:gap-36 xl:p-20 xl:pb-36"
+    >
+      <div
+        class="aspect-video w-full flex-shrink-0 bg-[url('/images/lab.png')] bg-cover bg-center xl:w-1/2 max-w-2xl xl:max-w-3xl"
+      >
+      </div>
+
+      <div class="flex flex-col gap-10 text-xl leading-normal">
+        <div>
+          Il Laboratorio è dotato di una moderna strumentazione per l’analisi di
+          vino, uva, mosti, vinacce, fecce di vino, bevande spiritose e olio.
+        </div>
+        <div class="flex flex-col gap-10">
+          <div class="flex gap-6">
+            <p>
+              L’esperienza consolidata nel tempo, il costante sviluppo
+              tecnologico, la collaborazione con Enti Territoriali,
+              Professionisti del settore e importanti Istituti di Ricerca fanno
+              del Centro Enologico Meridionale uno dei laboratori specializzati
+              più importanti in campo enologico in Italia, con oltre 100.000
+              parametri analitici effettuati all’anno.
+            </p>
+          </div>
+          <div class="flex gap-6">
+            <p>
+              Al fine di garantire un’offerta sempre più completa e aggiornata,
+              la filosofia aziendale pone da sempre grande attenzione
+              all’attività di ricerca, focalizzata su problematiche di reale
+              interesse pratico e mirata allo sviluppo di procedure innovative e
+              produzioni vinicole di qualità.
+            </p>
+          </div>
+          <div>
+            <Link href="#analisi" label="Vai alle analisi" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="mx-4 grid gap-10 overflow-scroll rounded-3xl p-4 text-white lg:p-10 xl:mx-20 xl:grid-cols-3 xl:bg-cem"
+    >
+      <div class="flex flex-col gap-6 rounded-2xl bg-cem p-4 xl:p-0">
+        <div class="flex flex-col items-center gap-4 uppercase">
+          <div class="w-20 flex-shrink-0">
+            <GrapeIcon className="fill-none stroke-white" />
+          </div>
+
+          <div class="text-center text-3xl">
+            Personale qualificato e affidabile
+          </div>
+        </div>
+        <p class="text-lg text-center">
+          Le competenze maturate nel tempo dagli analisti consentono di offrire
+          al cliente un eccellente servizio e di soddisfare anche le richieste
+          più peculiari
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-6 rounded-2xl bg-cem p-4 xl:p-0">
+        <div class="flex flex-col items-center gap-4 uppercase">
+          <div class="w-20 flex-shrink-0">
+            <CertificateIcon className="fill-white" />
+          </div>
+
+          <div class="text-center text-3xl">Puntualità e accuratezza</div>
+        </div>
+        <p class="text-lg text-center">
+          Il personale opera sempre con tempestività e precisione, garantendo
+          per le prove di routine risultati in 24 ore, ed offrendo al cliente
+          anche il servizio di ritiro dei campioni per trasportarli rapidamente
+          in laboratorio ed effettuare le analisi
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-6 rounded-2xl bg-cem p-4 xl:p-0">
+        <div class="flex flex-col items-center gap-4 uppercase">
+          <div class="w-20 flex-shrink-0">
+            <GearIcon className="fill-white" />
+          </div>
+
+          <div class="text-center text-3xl">Strumenti e servizi avanzati</div>
+        </div>
+
+        <p class="text-lg text-center">
+          La moderna strumentazione assicura l’esattezza del risultato analitico
+          e permette di eseguire sia le prove più comuni sia diverse prove
+          specialistiche, attraverso metodi avanzati e procedure innovative
+        </p>
+      </div>
+    </div>
+
+    <div class="py-20">
+      <h2 id="analisi" class="text-center text-3xl uppercase">Analisi</h2>
+      <div class="flex justify-center">
+        <div class="grid grid-cols-1 justify-center gap-10 p-10 lg:grid-cols-2">
+          {
+            analysis.map(({ name, analyses }) => {
+              return (
+                <div class="mx-auto flex w-full sm:w-96 flex-col justify-between rounded-lg border bg-slate-100 p-6 shadow-lg">
+                  <div>
+                    <h5 class="mb-2 text-2xl font-semibold tracking-tight">
+                      {name}
+                    </h5>
+
+                    <p class="mb-3 font-normal text-slate-600">
+                      <ul class="list-inside list-disc">
+                        {analyses.map((analysis) => {
+                          return <li class="ml-6 -indent-6">{analysis}</li>;
+                        })}
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              );
+            })
+          }
+        </div>
+      </div>
+    </div>
+    <div class="pt-10 text-center italic">
+      Per l'elenco aggiornato delle prove accreditate si rimanda al
+      <a
+        class="text-blue-700 underline"
+        href="https://services.accredia.it/accredia_labsearch.jsp?ID_LINK=1734&area=310&numeroaccr=0336&classification=A&isRestricted=false&dipartimento=L"
+        target="_blank">sito di ACCREDIA</a
+      >
+    </div>
+    <div class="py-10 text-center italic">
+      Scarica <a class="text-blue-700 underline" target="_blank"
+        >modulo invio campioni
+      </a>
+    </div>
+  </div>
+</Layout>

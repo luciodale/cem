@@ -1,0 +1,115 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const accrediaLink =
+  "https://services.accredia.it/accredia_labsearch.jsp?ID_LINK=1734&area=310&numeroaccr=0336&classification=A&isRestricted=false&dipartimento=L";
+
+const certications = [
+  {
+    title: "Accreditamento ACCREDIA n° 336",
+    description:
+      "(Ente Italiano Per L’accreditamento Dei Laboratori) per le analisi elencate nel sito del ACCREDIA",
+
+    link: accrediaLink,
+    linkCaption: "Visita Pagina",
+  },
+  {
+    title: "Certificazione Vitivinicola",
+    description:
+      "Autorizzazione del Ministero dell'Agricoltura, della Sovranità Alimentare e delle Foreste al Rilascio di Certificati di analisi nel settore vitivinicolo aventi valore ufficiali anche ai fini delle Esportazioni (D.M. 03/06/2022, G.U. 139 del 16/06/2022",
+    link: "https://www.politicheagricole.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/14067",
+    linkCaption: "Visita Pagina",
+  },
+  {
+    title: "Certificazione Oleicola",
+    description:
+      "Autorizzazione del Ministero dell'Agricoltura, della Sovranità Alimentare e delle Foreste al rilascio dei certificati di analisi nel settore oleicolo aventi valore ufficiale (D.M. 03/06/2022, G.U. 157 del 07/07/2022",
+    link: "https://www.politicheagricole.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/2015",
+    linkCaption: "Visita Pagina",
+  },
+  {
+    title: "Agricoltura Biologica: Lista laboratori abilitati per analisi BIO",
+    description:
+      "Inserimento nell’elenco del Ministero dell'Agricoltura, della Sovranità Alimentare e delle Foreste dei Laboratori designati all'analisi dei prodotti biologici",
+    link: "https://www.politicheagricole.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/10043",
+    linkCaption: "Visita Pagina",
+  },
+  {
+    title: "Autocontrollo delle industrie alimentari",
+
+    description:
+      "Inserimento nell’elenco regionale dei laboratori di analisi ai fini dell’Autocontrollo (HACCP) delle industrie alimentari DG/11/57 del 12 marzo 2007.",
+    link: "#",
+    linkCaption: "Apri Documento",
+  },
+  {
+    title: "Certificazione di Qualità",
+    description: "Stampa certificato ACCREDIA",
+    link: "/certificato-accredia.pdf",
+    linkCaption: "Apri Documento",
+  },
+];
+---
+
+<Layout title="Certificazioni">
+  <main class="text-slate-600">
+    <div class="flex justify-center">
+      <div
+        class="grid grid-cols-1 gap-10 px-10 py-10 lg:grid-cols-2 xl:grid-cols-3"
+      >
+        {
+          certications.map(({ title, description, link, linkCaption }) => {
+            return (
+              <div class="flex w-full flex-col justify-between rounded-lg border bg-slate-100 p-6 shadow-lg sm:w-96">
+                <div>
+                  <h5 class="mb-2 text-2xl font-semibold tracking-tight">
+                    {title}
+                  </h5>
+
+                  <p class="mb-3 font-normal text-slate-600">{description}</p>
+                </div>
+                <a
+                  href={link}
+                  target="_blank"
+                  class="inline-flex items-center font-medium text-blue-600 hover:underline"
+                >
+                  {linkCaption}
+                </a>
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+    <div
+      class="mx-auto flex max-w-5xl flex-wrap justify-center px-6 py-10 sm:px-0"
+    >
+      <a
+        class="w-1/4 min-w-64 flex-shrink-0"
+        href={accrediaLink}
+        target="_blank"
+      >
+        <img
+          src="/images/accredia-logo.png"
+          alt="Accredia Logo"
+          class="w-full"
+        />
+      </a>
+      <img
+        src="/images/ilac-logo.png"
+        alt=""
+        class="w-1/4 min-w-64 flex-shrink-0"
+      />
+      <img
+        src="/images/ministro-agricoltura-logo.svg"
+        alt=""
+        class="w-1/4 min-w-64 flex-shrink-0"
+      />
+      <img
+        src="/images/regione-abruzzo-logo.svg"
+        alt=""
+        class="w-1/4 min-w-64 flex-shrink-0"
+      />
+    </div>
+  </main>
+</Layout>
