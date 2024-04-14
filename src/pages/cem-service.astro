@@ -7,34 +7,26 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Chi Siamo">
   <main class="text-slate-600">
     <div
-      style={{
-        height: `calc(100dvh - ${navbarHeight}px)`,
-      }}
+      class="flex flex-col items-center justify-center gap-10 p-4 pb-20 xl:flex-row xl:gap-36 xl:p-20 xl:pb-36"
     >
-      <div class="flex h-full items-center justify-center overflow-hidden">
-        <div class="w-1/2 flex-shrink-0">
-          <img
-            src="/images/anto.jpg"
-            alt=""
-            class="h-full w-full object-cover"
-          />
+      <div
+        class="aspect-video w-full flex-shrink-0 bg-[url('/images/anto.jpg')] bg-cover bg-center xl:aspect-square xl:w-1/2 max-w-xl"
+      >
+      </div>
+      <div class="flex flex-col gap-10 text-xl leading-normal">
+        <div>
+          Cem Service, nata nel 2008 per affiancare l’attività di analisi del
+          Centro Enologico Meridionale, si propone come Centro di Consulenza in
+          servizi scientifici, tecnici, legislativi e amministrativi e come
+          Centro di Assistenza Agricola (CAA), rivolgendosi alle aziende
+          vitivinicole di dimensioni piccole, medie e grandi presenti sul
+          territorio nazionale.
         </div>
-
-        <div class="flex flex-col gap-10 px-10 text-xl leading-normal">
-          <div>
-            Cem Service, nata nel 2008 per affiancare l’attività di analisi del
-            Centro Enologico Meridionale, si propone come Centro di Consulenza
-            in servizi scientifici, tecnici, legislativi e amministrativi e come
-            Centro di Assistenza Agricola (CAA), rivolgendosi alle aziende
-            vitivinicole di dimensioni piccole, medie e grandi presenti sul
-            territorio nazionale.
-          </div>
-          <div>
-            In un mercato sempre più globalizzato e concorrenziale come quello
-            del vino, disporre di servizi integrati ed evoluti, concentrati in
-            un unico referente, rappresenta un importante vantaggio competitivo
-            del Cem Group.
-          </div>
+        <div>
+          In un mercato sempre più globalizzato e concorrenziale come quello del
+          vino, disporre di servizi integrati ed evoluti, concentrati in un
+          unico referente, rappresenta un importante vantaggio competitivo del
+          Cem Group.
         </div>
       </div>
     </div>

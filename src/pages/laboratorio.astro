@@ -1,5 +1,5 @@
 ---
-import { GrapeIcon } from "../components/Icons";
+import { CertificateIcon, GearIcon, GrapeIcon } from "../components/Icons";
 import { Link } from "../components/Link";
 import { navbarHeight } from "../globals";
 import Layout from "../layouts/Layout.astro";
@@ -74,123 +74,95 @@ const analysis = [
 <Layout title="Laboratorio">
   <div class="text-slate-600">
     <div
-      style={{
-        height: `calc(100dvh - ${navbarHeight}px)`,
-      }}
+      class="flex flex-col items-center justify-center gap-10 p-4 pb-20 xl:flex-row xl:gap-36 xl:p-20 xl:pb-36"
     >
-      <div class="flex h-full items-center justify-center">
-        <div class="relative w-1/2 flex-shrink-0">
-          <div class="absolute left-0 top-0 z-10 w-1/2">
-            <img
-              src="/images/lab1.jpg"
-              alt=""
-              class="h-full w-full object-cover"
-            />
-          </div>
-          <div class="absolute -bottom-20 right-20 w-1/2 flex-shrink-0">
-            <img
-              src="/images/lab2.jpg"
-              alt=""
-              class="h-full w-full object-cover"
-            />
-          </div>
-        </div>
+      <div
+        class="aspect-video w-full flex-shrink-0 bg-[url('/images/lab.png')] bg-cover bg-center xl:w-1/2 max-w-2xl xl:max-w-3xl"
+      >
+      </div>
 
-        <div class="flex flex-col gap-10 px-10 text-xl leading-normal">
-          <div>
-            Il Laboratorio è dotato di una moderna strumentazione per l’analisi
-            di vino, uva, mosti, vinacce, fecce di vino, bevande spiritose e
-            olio.
+      <div class="flex flex-col gap-10 text-xl leading-normal">
+        <div>
+          Il Laboratorio è dotato di una moderna strumentazione per l’analisi di
+          vino, uva, mosti, vinacce, fecce di vino, bevande spiritose e olio.
+        </div>
+        <div class="flex flex-col gap-10">
+          <div class="flex gap-6">
+            <p>
+              L’esperienza consolidata nel tempo, il costante sviluppo
+              tecnologico, la collaborazione con Enti Territoriali,
+              Professionisti del settore e importanti Istituti di Ricerca fanno
+              del Centro Enologico Meridionale uno dei laboratori specializzati
+              più importanti in campo enologico in Italia, con oltre 100.000
+              parametri analitici effettuati all’anno.
+            </p>
           </div>
-          <div class="flex flex-col gap-10">
-            <div class="flex gap-6">
-              <p>
-                L’esperienza consolidata nel tempo, il costante sviluppo
-                tecnologico, la collaborazione con Enti Territoriali,
-                Professionisti del settore e importanti Istituti di Ricerca
-                fanno del Centro Enologico Meridionale uno dei laboratori
-                specializzati più importanti in campo enologico in Italia, con
-                oltre 100.000 parametri analitici effettuati all’anno.
-              </p>
-            </div>
-            <div class="flex gap-6">
-              <p>
-                Al fine di garantire un’offerta sempre più completa e
-                aggiornata, la filosofia aziendale pone da sempre grande
-                attenzione all’attività di ricerca, focalizzata su problematiche
-                di reale interesse pratico e mirata allo sviluppo di procedure
-                innovative e produzioni vinicole di qualità.
-              </p>
-            </div>
-            <div>
-              <Link href="#analisi" label="Vai alle analisi" />
-            </div>
+          <div class="flex gap-6">
+            <p>
+              Al fine di garantire un’offerta sempre più completa e aggiornata,
+              la filosofia aziendale pone da sempre grande attenzione
+              all’attività di ricerca, focalizzata su problematiche di reale
+              interesse pratico e mirata allo sviluppo di procedure innovative e
+              produzioni vinicole di qualità.
+            </p>
+          </div>
+          <div>
+            <Link href="#analisi" label="Vai alle analisi" />
           </div>
         </div>
       </div>
     </div>
 
-    <div class="relative w-full text-white">
-      <div class="absolute h-full w-full bg-gray-400"></div>
-
-      <div class="relative z-10 flex gap-20 p-20">
-        <div class="flex w-1/3 flex-col gap-6">
-          <div class="flex items-center gap-4 uppercase">
-            <div class="w-20 flex-shrink-0">
-              <GrapeIcon className="w-18 fill-none stroke-white" />
-            </div>
-
-            <div class="text-3xl">Personale qualificato e affidabile</div>
+    <div
+      class="mx-4 grid gap-10 overflow-scroll rounded-3xl p-4 text-white lg:p-10 xl:mx-20 xl:grid-cols-3 xl:bg-cem"
+    >
+      <div class="flex flex-col gap-6 rounded-2xl bg-cem p-4 xl:p-0">
+        <div class="flex flex-col items-center gap-4 uppercase">
+          <div class="w-20 flex-shrink-0">
+            <GrapeIcon className="fill-none stroke-white" />
           </div>
-          Le competenze maturate nel tempo dagli analisti consentono di offrire al
-          cliente un eccellente servizio e di soddisfare anche le richieste più peculiari
+
+          <div class="text-center text-3xl">
+            Personale qualificato e affidabile
+          </div>
+        </div>
+        <p class="text-lg text-center">
+          Le competenze maturate nel tempo dagli analisti consentono di offrire
+          al cliente un eccellente servizio e di soddisfare anche le richieste
+          più peculiari
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-6 rounded-2xl bg-cem p-4 xl:p-0">
+        <div class="flex flex-col items-center gap-4 uppercase">
+          <div class="w-20 flex-shrink-0">
+            <CertificateIcon className="fill-white" />
+          </div>
+
+          <div class="text-center text-3xl">Puntualità e accuratezza</div>
+        </div>
+        <p class="text-lg text-center">
+          Il personale opera sempre con tempestività e precisione, garantendo
+          per le prove di routine risultati in 24 ore, ed offrendo al cliente
+          anche il servizio di ritiro dei campioni per trasportarli rapidamente
+          in laboratorio ed effettuare le analisi
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-6 rounded-2xl bg-cem p-4 xl:p-0">
+        <div class="flex flex-col items-center gap-4 uppercase">
+          <div class="w-20 flex-shrink-0">
+            <GearIcon className="fill-white" />
+          </div>
+
+          <div class="text-center text-3xl">Strumenti e servizi avanzati</div>
         </div>
 
-        <div class="flex w-1/3 flex-col gap-6">
-          <div class="flex items-center gap-4 uppercase">
-            <div class="w-20 flex-shrink-0">
-              <svg viewBox="0 0 64 64">
-                <path
-                  fill="white"
-                  d="M33.591 45.707c-1.808 4.109-4.826 10.979-6.401 14.555-.4.909-.78 1.826-1.211 2.72-.334.69-.777.693-1.19.038-.165-.26-.293-.541-.433-.814-.952-1.843-1.9-3.69-2.86-5.551l-.007.001-.003-.006-6.02 1.662c-.297.082-.589.178-.892.234-.763.139-1.061-.187-.778-.902.364-.923.78-1.824 1.177-2.734 1.268-2.916 3.495-8.013 5.246-12.029.207.241.403.496.592.76 1.393 1.953 3.163 2.944 5.26 2.944.795 0 1.645-.148 2.521-.439a10.845 10.845 0 0 1 3.404-.558c.523.001 1.055.041 1.595.119zm15.835 12.839c-.302-.055-.595-.152-.892-.233l-6.019-1.663a.031.031 0 0 0-.004.006l-.007-.001c-.959 1.862-1.909 3.708-2.86 5.551-.141.273-.268.554-.432.814-.415.655-.858.652-1.192-.038-.432-.893-.811-1.811-1.211-2.72-.899-2.041-2.267-5.154-3.611-8.214l2.494-5.853a9.848 9.848 0 0 0 2.626.352h.001c.114 0 .227-.001.344-.006 2.42-.087 3.849-2.001 4.319-2.63.263-.354.534-.686.812-1 1.75 4.012 3.968 9.091 5.233 11.999.398.91.814 1.811 1.177 2.734.283.715-.016 1.042-.778.902zM32.001 9.852c-6.913 0-12.517 5.604-12.517 12.517 0 6.912 5.604 12.516 12.517 12.516 6.912 0 12.516-5.604 12.516-12.516 0-6.913-5.604-12.517-12.516-12.517zm8.224 11.772c-1.095.905-2.18 1.825-3.288 2.714-.301.24-.365.466-.27.831.352 1.346.669 2.7 1.003 4.05.126.514.007.949-.416 1.277-.371.283-.868.27-1.338-.027-1.223-.768-2.453-1.531-3.664-2.316a.743.743 0 0 0-.251-.112.79.79 0 0 0-.253.112c-1.211.785-2.441 1.548-3.664 2.316-.47.297-.967.31-1.336.027-.425-.328-.544-.763-.418-1.277.334-1.351.65-2.704 1.003-4.05.097-.365.031-.591-.27-.831-1.106-.889-2.191-1.809-3.288-2.714-.277-.227-.473-.487-.446-.844-.001-.564.294-.997.784-1.135.192-.054.395-.078.595-.094 1.339-.104 2.678-.217 4.019-.29.329-.017.454-.149.561-.423.533-1.368 1.081-2.728 1.628-4.093.18-.454.517-.703 1.008-.707l.077.001.075-.001c.493.004.829.253 1.01.707.545 1.365 1.094 2.725 1.626 4.093.107.274.231.406.561.423 1.341.072 2.68.186 4.019.29.2.016.403.04.595.094.49.138.787.571.784 1.135.027.357-.169.616-.446.844z"
-                ></path>
-                <path
-                  fill="white"
-                  d="M53.537 19.227c-1.58-2.099-2.347-4.406-2.28-6.857.078-2.839-1.116-4.419-3.995-5.283-2.064-.619-3.852-1.894-5.313-3.789-.541-.702-1.172-1.352-1.662-1.84-.611-.609-1.275-.893-2.091-.893a4.08 4.08 0 0 0-.757.076l-.076.015c-.687.131-1.336.255-1.952.432-2.24.644-4.491.651-6.705.021-.662-.188-1.357-.318-2.093-.456-.277-.052-.555-.104-.831-.159a3.054 3.054 0 0 0-1.972.918 26.866 26.866 0 0 0-1.931 2.14 11.015 11.015 0 0 1-4.652 3.382c-.882.342-1.723.709-2.5 1.092-1.015.5-1.557 1.263-1.706 2.402l-.053.396c-.078.572-.152 1.112-.154 1.616-.015 3.152-1.458 5.645-2.714 7.464-1.163 1.686-1.18 3.192-.053 4.883a6 6 0 0 1 .218.359c.041.071.091.16.115.191 1.626 2.139 2.448 4.705 2.442 7.627-.005 2.339.966 3.693 3.146 4.391 2.783.891 5.054 2.548 6.75 4.924.955 1.339 2.02 1.962 3.353 1.962.545 0 1.145-.107 1.784-.319a13.147 13.147 0 0 1 4.141-.677 14.3 14.3 0 0 1 4.181.651 7.47 7.47 0 0 0 2.401.303c.898-.032 1.676-.553 2.524-1.69 1.945-2.607 4.26-4.308 7.078-5.201 2.097-.665 3.035-2.013 3.042-4.37.009-2.958.779-5.398 2.355-7.461 1.625-2.127 1.613-4.055-.04-6.25zM32 38.549c-8.936 0-16.18-7.244-16.18-16.18S23.064 6.189 32 6.189s16.18 7.244 16.18 16.18-7.244 16.18-16.18 16.18z"
-                ></path>
-              </svg>
-            </div>
-
-            <div class="text-3xl">Puntualità e accuratezza</div>
-          </div>
-          Il personale opera sempre con tempestività e precisione, garantendo per
-          le prove di routine risultati in 24 ore, ed offrendo al cliente anche il
-          servizio di ritiro dei campioni per trasportarli rapidamente in laboratorio
-          ed effettuare le analisi
-        </div>
-
-        <div class="flex w-1/3 flex-col gap-6">
-          <div class="flex items-center gap-4 uppercase">
-            <div class="w-20 flex-shrink-0">
-              <svg viewBox="0 0 64 64">
-                <path
-                  fill="white"
-                  d="M28 44.7c-1.9-.6-2.8-3.5-1.6-5.2.8-1.1.5-1.8-.2-2.6-.8-.9-1.5-1.1-2.6-.6-1.7.8-4.6-.6-4.9-2.6-.2-1.6-1.2-1.6-2.3-1.7-1.2-.2-1.7.5-2 1.5-.3 1-2.7 2.2-4.2 2.1-.3-.1-.8-.2-1.1-.5-1.3-1.1-2.1-.4-3 .4-.9.8-.9 1.5-.4 2.5.8 1.6-.7 4.7-2.7 4.9-1.2.2-1.5.7-1.6 1.4l-.1 1.3c0 .8.2 1.3 1.3 1.7 1.9.5 3 3.8 1.9 5.3-.7.9-.8 1.6 0 2.5.8.9 1.5 1.7 2.8.8.4-.3.9-.3 1.2-.4 1.5.1 3.6 1.6 3.8 2.7.2 1.1.5 1.8 1.8 1.8 1.2 0 2.1.2 2.6-1.4.6-1.9 3.7-2.9 5.3-1.8 1 .7 1.8.6 2.7-.2.8-.8 1.3-1.4.6-2.6-1-1.8.4-4.5 2.4-4.9 1.1-.2 1.5-.6 1.7-1.5l.1-1.3c0-.7-.4-1.2-1.5-1.6zM21.6 47c-.5 3.1-3.3 5.4-6.5 5.2-3.2-.2-5.7-2.9-5.7-6.1l.1-1C10 42 12.8 39.7 16 40c3.2.2 5.7 2.9 5.7 6.1l-.1.9z"
-                ></path>
-                <circle cx="38.4" cy="28.2" r="7.5" fill="white"></circle>
-                <path
-                  fill="white"
-                  d="M62.3 23.9c-.4-1.4-1.3-2.1-3.2-2.3-3.5-.4-6.1-5-4.6-8.2 1-2.1.2-3.1-1.3-4.4-1.6-1.3-2.9-1.4-4.6-.1-2.6 2-8.1.5-9.3-2.7-1-2.6-2.5-2.3-4.6-2.1-2.2.2-2.7 1.4-2.9 3.3-.2 1.8-3.7 4.7-6.3 5-.5-.1-1.4-.1-2.1-.5-2.3-1.5-3.4 0-4.8 1.6-1.3 1.6-1 2.9.2 4.4 2 2.5.4 8.2-2.8 9.3-.4.2-.3.8-.4 1.2 2.8.3 5.9.3 6.4 3.7.1.3.9 1 1.6 1h.1c.7-.4 1.4-.5 2.1-.5.2 0 .4 0 .6.1-.5-1.4-.8-2.8-.8-4.4 0-6.9 5.6-12.5 12.5-12.5s12.5 5.6 12.5 12.5S45 40.8 38.1 40.8c-3 0-5.8-1.1-8-2.9-.1.5-.4 1.1-.8 1.8-.1.2-.2.5 0 1 .1.4.4.7.6.7 1.9.6 2.9 1.8 3 3.6v.2l.1 1.6v.2c2 .6 4 1.8 4.4 2.9.7 1.7 1.5 2.8 3.6 2.4 2-.3 3.6-.5 3.9-3.2.2-1.6 1.3-3.1 2.8-4 .5-.4 1.1-.6 1.7-.8 1.3-.5 2.7-.6 3.8-.1 2 .9 3.2.5 4.5-1.2 1.1-1.6 1.7-2.7.1-4.6-2.3-2.8-1-7.8 2.3-9.1 1.8-.7 2.4-1.6 2.5-3.1l-.3-2.3z"
-                ></path>
-              </svg>
-            </div>
-
-            <div class="text-3xl">Strumenti e servizi avanzati</div>
-          </div>
+        <p class="text-lg text-center">
           La moderna strumentazione assicura l’esattezza del risultato analitico
-          e permette di eseguire sia le prove più comuni sia diverse prove specialistiche,
-          attraverso metodi avanzati e procedure innovative
-        </div>
+          e permette di eseguire sia le prove più comuni sia diverse prove
+          specialistiche, attraverso metodi avanzati e procedure innovative
+        </p>
       </div>
     </div>
 
