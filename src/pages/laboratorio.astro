@@ -1,6 +1,20 @@
 ---
+import { getImage } from "astro:assets";
+import slide1 from "../assets/images/foto1.jpg";
+import slide10 from "../assets/images/foto10.jpg";
+import slide11 from "../assets/images/foto11.jpg";
+import slide2 from "../assets/images/foto2.jpg";
+import slide3 from "../assets/images/foto3.jpg";
+import slide4 from "../assets/images/foto4.jpg";
+import slide5 from "../assets/images/foto5.jpg";
+import slide6 from "../assets/images/foto6.jpg";
+import slide7 from "../assets/images/foto7.jpg";
+import slide8 from "../assets/images/foto8.jpg";
+import slide9 from "../assets/images/foto9.jpg";
 import { CertificateIcon, GearIcon, GrapeIcon } from "../components/Icons";
 import { Link } from "../components/Link";
+import type { Carousel } from "../components/Splide.astro";
+import Splide from "../components/Splide.astro";
 import Layout from "../layouts/Layout.astro";
 
 const analysis = [
@@ -68,6 +82,53 @@ const analysis = [
     ],
   },
 ];
+
+const carouselImages: Carousel[] = [
+  {
+    src: (await getImage({ src: slide1, format: "webp" })).src,
+    alt: "slide 1",
+  },
+  {
+    src: (await getImage({ src: slide2, format: "webp" })).src,
+    alt: "slide 2",
+  },
+  {
+    src: (await getImage({ src: slide3, format: "webp" })).src,
+    alt: "slide 3",
+  },
+  {
+    src: (await getImage({ src: slide4, format: "webp" })).src,
+    alt: "slide 4",
+  },
+  {
+    src: (await getImage({ src: slide5, format: "webp" })).src,
+    alt: "slide 5",
+  },
+  {
+    src: (await getImage({ src: slide6, format: "webp" })).src,
+    alt: "slide 6",
+  },
+  {
+    src: (await getImage({ src: slide7, format: "webp" })).src,
+    alt: "slide 7",
+  },
+  {
+    src: (await getImage({ src: slide8, format: "webp" })).src,
+    alt: "slide 8",
+  },
+  {
+    src: (await getImage({ src: slide9, format: "webp" })).src,
+    alt: "slide 9",
+  },
+  {
+    src: (await getImage({ src: slide10, format: "webp" })).src,
+    alt: "slide 10",
+  },
+  {
+    src: (await getImage({ src: slide11, format: "webp" })).src,
+    alt: "slide 11",
+  },
+];
 ---
 
 <Layout title="Laboratorio">
@@ -76,8 +137,9 @@ const analysis = [
       class="flex flex-col items-center justify-center gap-10 p-4 pb-20 xl:flex-row xl:gap-36 xl:p-20 xl:pb-36"
     >
       <div
-        class="aspect-video w-full flex-shrink-0 bg-[url('/images/lab.png')] bg-cover bg-center xl:w-1/2 max-w-2xl xl:max-w-3xl"
+        class="w-full flex-shrink-0 xl:w-1/2 max-w-2xl xl:max-w-3xl aspect-video"
       >
+        <Splide carousel={carouselImages} />
       </div>
 
       <div class="flex flex-col gap-10 text-xl leading-normal">
@@ -106,7 +168,7 @@ const analysis = [
             </p>
           </div>
           <div>
-            <Link href="#analisi" label="Vai alle analisi" />
+            <Link href="#analisi" label="Vai alle prove" />
           </div>
         </div>
       </div>
@@ -208,7 +270,10 @@ const analysis = [
       >
     </div>
     <div class="py-10 text-center italic">
-      Scarica <a class="text-blue-700 underline" target="_blank"
+      Scarica <a
+        href="/MODULO_INVIO_CAMPIONI_EXPO.doc"
+        class="text-blue-700 underline"
+        target="_blank"
         >modulo invio campioni
       </a>
     </div>
