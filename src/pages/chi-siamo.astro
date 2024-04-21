@@ -46,15 +46,17 @@ import Layout from "../layouts/Layout.astro";
     </div>
 
     <div
-      class="mx-4 grid gap-10 overflow-scroll rounded-3xl p-4 text-white lg:p-10 xl:mx-20 xl:grid-cols-3 xl:bg-cem"
+      class="border-0 mx-4 grid gap-10 overflow-scroll p-4 lg:p-10 xl:mx-20 xl:grid-cols-3 xl:border-y-2 xl:border-cem"
     >
-      <div class="flex flex-col gap-6 rounded-2xl bg-cem p-4 xl:p-0">
+      <div
+        class="flex flex-col gap-6 rounded-2xl p-4 xl:p-0 border-2 xl:border-none border-cem"
+      >
         <div class="flex flex-col items-center gap-4 uppercase">
           <div class="w-20 flex-shrink-0">
-            <GrapeIcon className="fill-none stroke-white" />
+            <GrapeIcon className="fill-none stroke-cem" />
           </div>
 
-          <div class="text-center text-3xl">50 anni di esperienza</div>
+          <div class="text-center text-3xl text-cem">50 anni di esperienza</div>
         </div>
         <p class="text-lg text-center">
           Decenni di esperienza e conoscenze radicate in campo vitivinicolo
@@ -65,28 +67,36 @@ import Layout from "../layouts/Layout.astro";
         </p>
       </div>
 
-      <div class="flex flex-col gap-6 rounded-2xl bg-cem p-4 xl:p-0">
+      <div
+        class="flex flex-col gap-6 rounded-2xl p-4 xl:p-0 border-2 xl:border-none border-cem"
+      >
         <div class="flex flex-col items-center gap-4 uppercase">
           <div class="w-20 flex-shrink-0">
-            <CertificateIcon className="fill-white" />
+            <CertificateIcon className="fill-cem" />
           </div>
 
-          <div class="text-center text-3xl">Laboratorio accreditato</div>
+          <div class="text-center text-3xl text-cem">
+            Laboratorio accreditato
+          </div>
         </div>
         <p class="text-lg text-center">
           La qualità delle analisi è certificata dall’accreditamento ACCREDIA.
-          Attualmente, il Laboratorio vanta 47 prove analitiche accreditate nel
+          Attualmente, il Laboratorio vanta 63 prove analitiche accreditate nel
           settore vinicolo e oleicolo
         </p>
       </div>
 
-      <div class="flex flex-col gap-6 rounded-2xl bg-cem p-4 xl:p-0">
+      <div
+        class="flex flex-col gap-6 rounded-2xl p-4 xl:p-0 border-2 xl:border-none border-cem"
+      >
         <div class="flex flex-col items-center gap-4 uppercase">
           <div class="w-20 flex-shrink-0">
-            <GearIcon className="fill-white" />
+            <GearIcon className="fill-cem" />
           </div>
 
-          <div class="text-center text-3xl">Tecnologia all'Avanguardia</div>
+          <div class="text-center text-3xl text-cem">
+            Tecnologia all'Avanguardia
+          </div>
         </div>
 
         <p class="text-lg text-center">
