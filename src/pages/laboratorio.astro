@@ -1,7 +1,6 @@
 ---
 import { CertificateIcon, GearIcon, GrapeIcon } from "../components/Icons";
 import { Link } from "../components/Link";
-import { navbarHeight } from "../globals";
 import Layout from "../layouts/Layout.astro";
 
 const analysis = [
@@ -114,12 +113,14 @@ const analysis = [
     </div>
 
     <div
-      class="mx-4 grid gap-10 overflow-scroll rounded-3xl p-4 text-white lg:p-10 xl:mx-20 xl:grid-cols-3 xl:bg-cem"
+      class="border-0 mx-4 grid gap-10 p-4 lg:p-10 xl:mx-20 xl:grid-cols-3 xl:border-y-2 xl:border-cem"
     >
-      <div class="flex flex-col gap-6 rounded-2xl bg-cem p-4 xl:p-0">
+      <div
+        class="flex flex-col gap-6 rounded-2xl p-4 xl:p-0 border-2 xl:border-none border-cem"
+      >
         <div class="flex flex-col items-center gap-4 uppercase">
           <div class="w-20 flex-shrink-0">
-            <GrapeIcon className="fill-none stroke-white" />
+            <GrapeIcon className="fill-none stroke-cem" />
           </div>
 
           <div class="text-center text-3xl">
@@ -133,10 +134,12 @@ const analysis = [
         </p>
       </div>
 
-      <div class="flex flex-col gap-6 rounded-2xl bg-cem p-4 xl:p-0">
+      <div
+        class="flex flex-col gap-6 rounded-2xl p-4 xl:p-0 border-2 xl:border-none border-cem"
+      >
         <div class="flex flex-col items-center gap-4 uppercase">
           <div class="w-20 flex-shrink-0">
-            <CertificateIcon className="fill-white" />
+            <CertificateIcon className="fill-cem" />
           </div>
 
           <div class="text-center text-3xl">Puntualità e accuratezza</div>
@@ -149,10 +152,12 @@ const analysis = [
         </p>
       </div>
 
-      <div class="flex flex-col gap-6 rounded-2xl bg-cem p-4 xl:p-0">
+      <div
+        class="flex flex-col gap-6 rounded-2xl p-4 xl:p-0 border-2 xl:border-none border-cem"
+      >
         <div class="flex flex-col items-center gap-4 uppercase">
           <div class="w-20 flex-shrink-0">
-            <GearIcon className="fill-white" />
+            <GearIcon className="fill-cem" />
           </div>
 
           <div class="text-center text-3xl">Strumenti e servizi avanzati</div>
