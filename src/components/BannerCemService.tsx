@@ -81,7 +81,7 @@ function ConsulenzaContent() {
       <div className="relative">
         <img
           className="absolute lg:hidden top-0 w-full object-cover h-full"
-          src="/images/portrait-strategy.jpeg"
+          src="/images/portrait-help.jpeg"
           alt=""
         />
         <div className="absolute inset-6 top-0 left-0 backdrop-blur-sm lg:backdrop-blur-none h-full w-full bg-black/80 lg:bg-transparent"></div>
@@ -121,7 +121,7 @@ function ConsulenzaContent() {
         </div>
       </div>
 
-      <div className="hidden lg:block lg:w-1/2 flex-shrink-0 lg:bg-[url('/images/portrait-strategy.jpeg')] bg-cover bg-bottom"></div>
+      <div className="hidden lg:block lg:w-1/2 flex-shrink-0 lg:bg-[url('/images/portrait-help.jpeg')] bg-cover bg-bottom"></div>
     </div>
   );
 }
@@ -129,11 +129,11 @@ function ConsulenzaContent() {
 function CAAContent() {
   return (
     <div className="flex gap-10 xl:gap-28 p-4 pt-10 md:p-20">
-      <div className="hidden lg:block lg:w-1/2 flex-shrink-0 lg:bg-[url('/images/portrait-help.jpeg')] bg-cover bg-bottom"></div>
+      <div className="hidden lg:block lg:w-1/2 flex-shrink-0 lg:bg-[url('/images/portrait-strategy.jpeg')] bg-cover bg-bottom"></div>
       <div className="relative">
         <img
           className="absolute lg:hidden top-0 w-full object-cover h-full"
-          src="/images/portrait-help.jpeg"
+          src="/images/portrait-strategy.jpeg"
           alt=""
         />
         <div className="absolute inset-6 top-0 left-0 backdrop-blur-sm lg:backdrop-blur-none h-full w-full bg-black/80 lg:bg-transparent"></div>
@@ -227,7 +227,7 @@ export function BannerCemService() {
         >
           {elements.map(({ id, title }) => {
             const activeTab = tab === id;
-            const iconStyle = "stroke-white w-10 h-10 lg:w-20 lg:h-20";
+            const iconStyle = `${activeTab ? "stroke-white" : "stroke-cem "} w-10 h-10 lg:w-20 lg:h-20`;
 
             return (
               <Tab
@@ -243,10 +243,8 @@ export function BannerCemService() {
                   ) : null
                 }
                 className={classNames(
-                  "flex flex-col gap-6 p-2 lg:p-10 transition-all",
-                  activeTab
-                    ? "rounded-3xl bg-cem text-white"
-                    : "bg-gray-400 text-white",
+                  "flex flex-col gap-6 p-2 lg:p-10 border-4 border-cem transition-all",
+                  activeTab ? "bg-cem text-white" : "text-cem",
                 )}
                 onClick={() => setTab(id)}
               />

@@ -17,7 +17,11 @@ export default function Navbar({ currentHref }: { currentHref: string }) {
           className="flex items-center justify-center space-x-3 sm:w-1/6 rtl:space-x-reverse"
         >
           <img src="/logo.svg" className="w-28" alt="Cem Logo" />
+          <div>
+            Centro <br /> Enologico <br /> Meridionale
+          </div>
         </a>
+
         <button
           id="burger-button"
           onClick={() => {
