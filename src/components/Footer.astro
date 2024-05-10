@@ -69,9 +69,19 @@ const currentHref = Astro.url.pathname;
       </div>
     </div>
     <div class="text-center text-xs text-gray-500">
-      © <span id="current-year"></span>
-      <a href="https://flowbite.com/" class="hover:underline">CEM™</a>. Tutti i
-      Diritti Riservati.
+      <div>
+        {
+          currentHref === "/cem-service/"
+            ? "CEM Service"
+            : "CEM Centro Enologico Meridionale"
+        }
+        Srl Loc Caldari Stazione 66026 Ortona (CH) P.IVA 02466040694
+      </div>
+      <div>
+        © <span id="current-year"></span>
+        <a href="https://flowbite.com/" class="hover:underline">CEM™</a>. Tutti
+        i Diritti Riservati.
+      </div>
     </div>
   </div>
   <script>
