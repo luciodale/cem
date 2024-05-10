@@ -4,7 +4,6 @@ import slide1 from "../assets/images/foto1.jpg";
 import slide10 from "../assets/images/foto10.jpg";
 import slide11 from "../assets/images/foto11.jpg";
 import slide2 from "../assets/images/foto2.jpg";
-import slide3 from "../assets/images/foto3.jpg";
 import slide4 from "../assets/images/foto4.jpg";
 import slide5 from "../assets/images/foto5.jpg";
 import slide6 from "../assets/images/foto6.jpg";
@@ -93,10 +92,6 @@ const carouselImages: Carousel[] = [
     alt: "slide 2",
   },
   {
-    src: (await getImage({ src: slide3, format: "webp" })).src,
-    alt: "slide 3",
-  },
-  {
     src: (await getImage({ src: slide4, format: "webp" })).src,
     alt: "slide 4",
   },
@@ -137,7 +132,7 @@ const carouselImages: Carousel[] = [
       class="flex flex-col items-center justify-center gap-10 p-4 pb-20 xl:flex-row xl:gap-36 xl:p-20 xl:pb-36"
     >
       <div
-        class="w-full flex-shrink-0 xl:w-1/2 max-w-2xl xl:max-w-3xl aspect-video"
+        class="w-full flex-shrink-0 xl:w-1/2 max-w-2xl xl:max-w-3xl aspect-[4/3]"
       >
         <Splide carousel={carouselImages} />
       </div>

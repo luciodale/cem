@@ -2,6 +2,7 @@
 export type Carousel = {
   src: string;
   alt: string;
+  style?: string;
 };
 
 const { carousel } = Astro.props as { carousel: Carousel[] };
@@ -24,12 +25,12 @@ const { carousel } = Astro.props as { carousel: Carousel[] };
   <div class="splide__track h-full">
     <div class="splide__list">
       {
-        carousel.map(({ src, alt }) => (
+        carousel.map(({ src, alt, style }) => (
           <div class="relative splide__slide flex place-content-center w-full h-full">
             <img
               src={src}
               alt={alt}
-              class="w-full bottom-0 object-cover absolute"
+              class={style ?? "w-full h-full bottom-0 object-cover absolute"}
             />
           </div>
         ))
