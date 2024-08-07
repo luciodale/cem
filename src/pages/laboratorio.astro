@@ -131,6 +131,15 @@ const carouselImages: Carousel[] = [
 ];
 ---
 
+<style>
+  /* safari only code, as backdrop-filter hasn't been implemented just yet */
+  @supports (-webkit-backdrop-filter: none) {
+    .safari-text-indent {
+      text-indent: -1rem;
+    }
+  }
+</style>
+
 <Layout title="Laboratorio">
   <div class="text-slate-600">
     <div
@@ -249,7 +258,11 @@ const carouselImages: Carousel[] = [
                     <p class="mb-3 font-normal text-slate-600">
                       <ul class="list-inside list-disc">
                         {analyses.map((analysis) => {
-                          return <li class="ml-6 -indent-6">{analysis}</li>;
+                          return (
+                            <li class="ml-6 -indent-6 safari-text-indent">
+                              {analysis}
+                            </li>
+                          );
                         })}
                       </ul>
                     </p>
