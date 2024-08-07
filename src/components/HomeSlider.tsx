@@ -44,7 +44,7 @@ const slides = [
   {
     title: "CEM Service",
     description:
-      "Cosulenza in servizi tecnici, legislativi, amministrativi e sportello CAA.",
+      "Consulenza in servizi tecnici, legislativi, amministrativi e sportello CAA.",
     link: "/cem-service",
     linkLabel: "Scopri di più",
     image: "bg-[url('/images/vineyard.jpg')]",
