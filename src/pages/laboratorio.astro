@@ -266,9 +266,15 @@ const carouselImages: Carousel[] = [
                           return (
                             <li class="ml-6 -indent-6 safari-text-indent">
                               {link ? (
-                                <a href={link} class="underline">
-                                  {" "}
-                                  {analysis}{" "}
+                                <a
+                                  href={link}
+                                  class="underline gap-1 items-center"
+                                >
+                                  {analysis}
+                                  <img
+                                    src="/images/magnifier.svg"
+                                    class="ml-1 w-4 h-4 inline-block"
+                                  />
                                 </a>
                               ) : (
                                 analysis
