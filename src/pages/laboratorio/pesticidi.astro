@@ -1,0 +1,46 @@
+---
+import { getImage } from "astro:assets";
+import pic from "../../assets/images/foto10.jpg";
+import Layout from "../../layouts/Layout.astro";
+
+const img = (await getImage({ src: pic, format: "webp" })).src;
+---
+
+<Layout title="Cem Service">
+  <main class="text-slate-600">
+    <div
+      class="flex flex-col items-center justify-center gap-10 p-4 pb-20 xl:flex-row xl:gap-36 xl:p-20 xl:pb-36"
+    >
+      <div
+        style={{ backgroundImage: `url(${img})` }}
+        class={`aspect-video w-full flex-shrink-0 bg-cover bg-center xl:aspect-square xl:w-1/2 max-w-xl`}
+      >
+      </div>
+      <div class="flex flex-col gap-10 text-xl leading-normal">
+        <div class="text-3xl font-bold uppercase">Pesticidi</div>
+        <div>
+          Le analisi per la ricerca di prodotti fitosanitari sono effettuate
+          secondo i principi e le specifiche dei metodi di prova ufficiali per
+          la determinazione di residui di fitofarmaci su alimenti: EN
+          15662:2009 – QuEChERS – method, CUUA e OIV (uve, mosti, vino e foglie
+          di vite) per i quali il Centro Enologico Meridionale ha avuto
+          l’accreditamento ACCREDIA. Sono a disposizione due diverse soluzioni
+          multiresiduali:
+        </div>
+        <div>
+          <ul class="list-inside list-disc flex flex-col gap-4">
+            <li class="ml-6 -indent-6">
+              Multiresiduale standard enologia, ricerca in UPLC MS/MS circa 485
+              principi attivi selezionati
+            </li>
+            <li class="ml-6 -indent-6">
+              Multiresiduale FULL, che oltre ai 485 principi attivi selezionati
+              ricerca circa 10 principi attivi polari. Impiego di UPLC e GC
+              MS/MS.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

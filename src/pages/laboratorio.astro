@@ -87,6 +87,10 @@ const analysis = [
   },
 ];
 
+const links: Record<string, Record<string, string>> = {
+  Contaminanti: { pesticidi: "/laboratorio/pesticidi" },
+};
+
 const carouselImages: Carousel[] = [
   {
     src: (await getImage({ src: slide1, format: "webp" })).src,
@@ -258,9 +262,17 @@ const carouselImages: Carousel[] = [
                     <p class="mb-3 font-normal text-slate-600">
                       <ul class="list-inside list-disc">
                         {analyses.map((analysis) => {
+                          const link = links[name]?.[analysis];
                           return (
                             <li class="ml-6 -indent-6 safari-text-indent">
-                              {analysis}
+                              {link ? (
+                                <a href={link} class="underline">
+                                  {" "}
+                                  {analysis}{" "}
+                                </a>
+                              ) : (
+                                analysis
+                              )}
                             </li>
                           );
                         })}
