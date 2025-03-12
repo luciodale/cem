@@ -15,6 +15,7 @@ import { Link } from "../components/Link";
 import type { Carousel } from "../components/Splide.astro";
 import Splide from "../components/Splide.astro";
 import Layout from "../layouts/Layout.astro";
+import { accrediaLink } from "../constants";
 
 const analysis = [
   {
@@ -296,7 +297,7 @@ const carouselImages: Carousel[] = [
       Per l'elenco aggiornato delle prove accreditate si rimanda al
       <a
         class="text-blue-700 underline"
-        href="https://services.accredia.it/accredia_labsearch.jsp?ID_LINK=1734&area=310&numeroaccr=0336&classification=A&isRestricted=false&dipartimento=L"
+        href={accrediaLink}
         target="_blank">sito di ACCREDIA</a
       >
     </div>

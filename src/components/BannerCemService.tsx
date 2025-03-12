@@ -21,14 +21,14 @@ const elements = [
 function ProgettazioneContent() {
 	return (
 		<div className="flex gap-10 xl:gap-28 p-4 pt-10 md:p-20">
-			<div className="hidden lg:block lg:w-1/2 flex-shrink-0 lg:bg-[url('/images/portrait-vineyard.jpeg')] bg-cover bg-bottom"></div>
+			<div className="hidden lg:block lg:w-1/2 flex-shrink-0 lg:bg-[url('/images/portrait-vineyard.jpeg')] bg-cover bg-bottom" />
 			<div className="relative">
 				<img
 					className="absolute lg:hidden top-0 w-full object-cover h-full"
 					src="/images/portrait-vineyard.jpeg"
 					alt=""
 				/>
-				<div className="absolute inset-6 top-0 left-0 backdrop-blur-sm lg:backdrop-blur-none h-full w-full bg-black/80 lg:bg-transparent"></div>
+				<div className="absolute inset-6 top-0 left-0 backdrop-blur-sm lg:backdrop-blur-none h-full w-full bg-black/80 lg:bg-transparent" />
 				<div className="flex z-10 p-10 text-white lg:text-slate-600 relative flex-col gap-10 xl:px-0 xl:py-20 text-lg lg:text-xl">
 					<div>
 						La divisione “Progetti” si occupa di pianificare e coordinare la
@@ -84,7 +84,7 @@ function ConsulenzaContent() {
 					src="/images/portrait-help.jpeg"
 					alt=""
 				/>
-				<div className="absolute inset-6 top-0 left-0 backdrop-blur-sm lg:backdrop-blur-none h-full w-full bg-black/80 lg:bg-transparent"></div>
+				<div className="absolute inset-6 top-0 left-0 backdrop-blur-sm lg:backdrop-blur-none h-full w-full bg-black/80 lg:bg-transparent" />
 				<div className="flex z-10 p-10 text-white lg:text-slate-600 relative flex-col gap-10 xl:px-0 xl:py-20 text-lg lg:text-xl">
 					<div>
 						Attraverso la sua attività di consulenza in servizi scientifici,
@@ -121,7 +121,7 @@ function ConsulenzaContent() {
 				</div>
 			</div>
 
-			<div className="hidden lg:block lg:w-1/2 flex-shrink-0 lg:bg-[url('/images/portrait-help.jpeg')] bg-cover bg-bottom"></div>
+			<div className="hidden lg:block lg:w-1/2 flex-shrink-0 lg:bg-[url('/images/portrait-help.jpeg')] bg-cover bg-bottom" />
 		</div>
 	);
 }
@@ -129,14 +129,14 @@ function ConsulenzaContent() {
 function CAAContent() {
 	return (
 		<div className="flex gap-10 xl:gap-28 p-4 pt-10 md:p-20">
-			<div className="hidden lg:block lg:w-1/2 flex-shrink-0 lg:bg-[url('/images/portrait-strategy.jpeg')] bg-cover bg-bottom"></div>
+			<div className="hidden lg:block lg:w-1/2 flex-shrink-0 lg:bg-[url('/images/portrait-strategy.jpeg')] bg-cover bg-bottom" />
 			<div className="relative">
 				<img
 					className="absolute lg:hidden top-0 w-full object-cover h-full"
 					src="/images/portrait-strategy.jpeg"
 					alt=""
 				/>
-				<div className="absolute inset-6 top-0 left-0 backdrop-blur-sm lg:backdrop-blur-none h-full w-full bg-black/80 lg:bg-transparent"></div>
+				<div className="absolute inset-6 top-0 left-0 backdrop-blur-sm lg:backdrop-blur-none h-full w-full bg-black/80 lg:bg-transparent" />
 				<div className="flex z-10 p-10 text-white lg:text-slate-600 relative flex-col gap-10 xl:px-0 xl:py-20 text-lg lg:text-xl">
 					<div>
 						In qualità di Centro Assistenza Agricola C.A.N.A.P.A. la società Cem
