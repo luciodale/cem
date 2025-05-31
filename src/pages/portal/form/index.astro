@@ -1,0 +1,13 @@
+---
+import HelloWorld from "../../../components/portal/form/HelloWorld";
+import Layout from "../../../layouts/Layout.astro";
+---
+
+<Layout title="Form Portal">
+  <div class="container mx-auto py-8">
+    <h1 class="text-3xl font-bold mb-6">Form Portal</h1>
+    <div class="bg-white rounded-lg shadow p-6">
+      <HelloWorld client:load />
+    </div>
+  </div>
+</Layout> 
