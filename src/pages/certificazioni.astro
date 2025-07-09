@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 
 const certications = [
   {
-    title: "Accreditamento ACCREDIA n° 336",
+    title: "Accreditamento ACCREDIA n° 302",
     description:
       "(Ente Italiano Per L’accreditamento Dei Laboratori) per le analisi elencate nel sito del ACCREDIA",
 
@@ -80,33 +80,34 @@ const certications = [
       </div>
     </div>
     <div
-      class="mx-auto flex max-w-5xl flex-wrap justify-center px-6 py-10 sm:px-0"
+      class="mx-auto flex max-w-5xl flex-wrap justify-center items-center px-6 py-10 sm:px-0"
     >
+      <img
+        src="/images/ilac-logo.png"
+        alt=""
+        class="w-40 sm:mr-10 mb-4 flex-shrink-0"
+      />
       <a
-        class="w-1/4 min-w-64 flex-shrink-0"
+        class="w-1/5 min-w-48 sm:mr-10 mb-4 flex-shrink-0"
         href={accrediaLink}
         target="_blank"
       >
         <img
-          src="/images/accredia-logo.png"
+          src="/images/accredia-logo.svg"
           alt="Accredia Logo"
           class="w-full"
         />
       </a>
-      <img
-        src="/images/ilac-logo.png"
-        alt=""
-        class="w-1/4 min-w-64 flex-shrink-0"
-      />
+
       <img
         src="/images/ministro-agricoltura-logo.svg"
         alt=""
-        class="w-1/4 min-w-64 flex-shrink-0"
+        class="w-1/4 min-w-64 mb-4 flex-shrink-0"
       />
       <img
         src="/images/regione-abruzzo-logo.svg"
         alt=""
-        class="w-1/4 min-w-64 flex-shrink-0"
+        class="w-1/4 min-w-64 mb-4 flex-shrink-0"
       />
     </div>
   </main>
