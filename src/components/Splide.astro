@@ -5,7 +5,11 @@ export type Carousel = {
   style?: string;
 };
 
-const { carousel } = Astro.props as { carousel: Carousel[] };
+type Props = {
+  carousel: Carousel[];
+};
+
+const { carousel } = Astro.props;
 ---
 
 <style>
@@ -20,17 +24,17 @@ const { carousel } = Astro.props as { carousel: Carousel[] };
   }
 </style>
 
-<link rel="stylesheet" href="/splide.min.css" />
 <div class="splide h-full">
   <div class="splide__track h-full">
     <div class="splide__list">
       {
         carousel.map(({ src, alt, style }) => (
-          <div class="relative splide__slide flex place-content-center w-full h-full">
+          <div class="splide__slide relative flex h-full w-full place-content-center">
             <img
               src={src}
               alt={alt}
-              class={style ?? "w-full h-full bottom-0 object-cover absolute"}
+              loading="lazy"
+              class={style ?? "absolute bottom-0 h-full w-full object-cover"}
             />
           </div>
         ))
@@ -42,11 +46,14 @@ const { carousel } = Astro.props as { carousel: Carousel[] };
   </div>
 </div>
 
-<script is:inline src="/scripts/splide.min.js"></script>
+<script>
+  import Splide from "@splidejs/splide";
+  import "@splidejs/splide/css";
 
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const splideInstance = new Splide(".splide", {
+  const root = document.querySelector<HTMLElement>(".splide");
+
+  if (root) {
+    const splide = new Splide(root, {
       type: "fade",
       perPage: 1,
       focus: "center",
@@ -59,14 +66,15 @@ const { carousel } = Astro.props as { carousel: Carousel[] };
       throttle: 300,
     });
 
-    const bar = splideInstance.root.querySelector(".my-slider-progress-bar");
-    // Updates the bar width whenever the carousel moves:
-    splideInstance.on("mounted move", () => {
-      var end = splideInstance.Components.Controller.getEnd() + 1;
-      var rate = Math.min((splideInstance.index + 1) / end, 1);
-      bar.style.width = String(100 * rate) + "%";
+    const bar = root.querySelector<HTMLElement>(".my-slider-progress-bar");
+
+    splide.on("mounted move", () => {
+      if (!bar) return;
+      const end = splide.Components.Controller.getEnd() + 1;
+      const rate = Math.min((splide.index + 1) / end, 1);
+      bar.style.width = `${100 * rate}%`;
     });
 
-    splideInstance.mount();
-  });
+    splide.mount();
+  }
 </script>
