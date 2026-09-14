@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
+import StructuredData from "../components/StructuredData.astro";
 import {
   defaultOgImage,
   siteDescription,
@@ -62,6 +63,8 @@ const ogImageUrl = new URL(image, Astro.site);
       name="google-site-verification"
       content="jOEfRVi_LV_m3QIZIhVXqp0Yas6JDEIe-bhst9vANN8"
     />
+
+    <StructuredData />
 
     <link rel="stylesheet" href="/fonts.css" />
     <link rel="stylesheet" href="/style.css" />

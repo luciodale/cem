@@ -1,0 +1,61 @@
+---
+import { company, siteDescription, siteName, socialLinks } from "../config/site";
+
+const site = Astro.site!;
+
+const organization = {
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LocalBusiness"],
+  "@id": new URL("#organization", site).href,
+  name: siteName,
+  legalName: company.legalName,
+  alternateName: "CEM Group",
+  description: siteDescription,
+  url: site.href,
+  logo: new URL("/logo.svg", site).href,
+  image: new URL("/images/og-default.jpg", site).href,
+  foundingDate: company.foundingDate,
+  vatID: company.vatId,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: company.street,
+    postalCode: company.postalCode,
+    addressLocality: company.city,
+    addressRegion: company.province,
+    addressCountry: company.country,
+  },
+  telephone: company.phones.map((phone) => phone.replace(/\s/g, "")),
+  email: company.email,
+  sameAs: socialLinks,
+  hasCertification: {
+    "@type": "Certification",
+    name: "Accreditamento ACCREDIA n. 302 - UNI CEI EN ISO/IEC 17025:2018",
+    issuedBy: {
+      "@type": "Organization",
+      name: "ACCREDIA - Ente Italiano di Accreditamento",
+      url: "https://www.accredia.it/",
+    },
+  },
+};
+
+const website = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": new URL("#website", site).href,
+  url: site.href,
+  name: siteName,
+  inLanguage: "it-IT",
+  publisher: { "@id": organization["@id"] },
+};
+---
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(organization)}
+  is:inline
+/>
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(website)}
+  is:inline
+/>
