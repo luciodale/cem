@@ -1,0 +1,118 @@
+---
+import { homeSlides } from "../data/homeSlides";
+---
+
+<style>
+  .hero-track {
+    scrollbar-width: none;
+  }
+
+  .hero-track::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<section class="relative" aria-roledescription="carousel" aria-label="CEM">
+  <ul
+    id="hero-track"
+    class="hero-track flex h-hero snap-x snap-mandatory list-none overflow-x-auto scroll-smooth"
+  >
+    {
+      homeSlides.map(({ title, description, href, linkLabel, image }, index) => (
+        <li
+          id={`hero-slide-${index}`}
+          class="relative flex w-full flex-shrink-0 snap-start flex-col items-center justify-end overflow-hidden pb-16"
+          aria-label={`${index + 1} di ${homeSlides.length}`}
+        >
+          <img
+            src={image}
+            alt=""
+            width="1200"
+            height="800"
+            loading={index === 0 ? "eager" : "lazy"}
+            fetchpriority={index === 0 ? "high" : "auto"}
+            decoding={index === 0 ? "sync" : "async"}
+            class="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+          />
+
+          <div class="flex max-w-full flex-col gap-4 bg-white/70 p-6 sm:p-10">
+            {index === 0 ? (
+              <h1 class="text-center text-2xl uppercase sm:text-left sm:text-5xl">
+                {title}
+              </h1>
+            ) : (
+              <h2 class="text-center text-2xl uppercase sm:text-left sm:text-5xl">
+                {title}
+              </h2>
+            )}
+            <p class="text-center text-xl sm:text-left sm:text-3xl">
+              {description}
+            </p>
+            <div class="mx-auto pt-4 sm:mx-0">
+              <a
+                href={href}
+                class="block w-fit cursor-pointer border-2 border-cem px-4 py-2 text-xl font-bold text-cem transition-colors hover:bg-cem hover:text-white"
+              >
+                {linkLabel}
+              </a>
+            </div>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div
+    class="absolute inset-x-0 bottom-6 flex justify-center gap-3"
+    role="tablist"
+    aria-label="Scegli la slide"
+  >
+    {
+      homeSlides.map(({ title }, index) => (
+        <a
+          href={`#hero-slide-${index}`}
+          data-hero-dot={index}
+          role="tab"
+          aria-label={title}
+          aria-selected={index === 0 ? "true" : "false"}
+          class="h-3 w-3 rounded-full border-2 border-cem transition-colors aria-selected:bg-cem"
+        />
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  const track = document.getElementById("hero-track");
+  const dots = Array.from(
+    document.querySelectorAll<HTMLAnchorElement>("[data-hero-dot]"),
+  );
+
+  if (track && dots.length) {
+    for (const dot of dots) {
+      dot.addEventListener("click", (event) => {
+        event.preventDefault();
+        const index = Number(dot.dataset.heroDot);
+        track.scrollTo({ left: index * track.clientWidth, behavior: "smooth" });
+      });
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          const index = Array.from(track.children).indexOf(entry.target);
+          for (const dot of dots) {
+            dot.setAttribute(
+              "aria-selected",
+              String(Number(dot.dataset.heroDot) === index),
+            );
+          }
+        }
+      },
+      { root: track, threshold: 0.6 },
+    );
+
+    for (const slide of track.children) observer.observe(slide);
+  }
+</script>

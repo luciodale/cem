@@ -1,7 +1,6 @@
+import defaultTheme from "tailwindcss/defaultTheme";
+
 /** @type {import('tailwindcss').Config} */
-
-const defaultTheme = require("tailwindcss/defaultTheme");
-
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
@@ -11,6 +10,12 @@ export default {
       },
       colors: {
         cem: "#ff004f",
+      },
+      spacing: {
+        navbar: "140px",
+      },
+      height: {
+        hero: "calc(100dvh - 140px)",
       },
     },
   },

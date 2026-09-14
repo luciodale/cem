@@ -1,5 +1,5 @@
 ---
-import { SliderHomepage } from "../components/HomeSlider";
+import HomeHero from "../components/HomeHero.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -7,5 +7,7 @@ import Layout from "../layouts/Layout.astro";
   title="CEM Centro Enologico Meridionale | Analisi enologiche dal 1971"
   appendSiteName={false}
 >
-  <SliderHomepage client:only="react" />
+  <main>
+    <HomeHero />
+  </main>
 </Layout>
