@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import centroEnologico from "../assets/images/centro-enologico-meridionale.jpeg";
+import italo from "../assets/images/italo.jpg";
 import CertificateIcon from "../components/icons/CertificateIcon.astro";
 import GearIcon from "../components/icons/GearIcon.astro";
 import GrapeIcon from "../components/icons/GrapeIcon.astro";
@@ -18,10 +21,13 @@ import Layout from "../layouts/Layout.astro";
     <div
       class="flex flex-col items-center justify-center gap-10 p-4 pb-20 xl:flex-row xl:gap-36 xl:p-20 xl:pb-36"
     >
-      <div
-        class="aspect-video w-full flex-shrink-0 bg-[url('/images/italo.jpg')] bg-cover bg-center xl:aspect-square xl:w-1/2 max-w-xl"
-      >
-      </div>
+      <Image
+        src={italo}
+        alt="Italo De Luca, fondatore del Centro Enologico Meridionale"
+        widths={[480, 800, 1200]}
+        sizes="(min-width: 1280px) 50vw, 100vw"
+        class="aspect-video w-full max-w-xl flex-shrink-0 object-cover object-center xl:aspect-square xl:w-1/2"
+      />
 
       <div class="flex flex-col gap-10 text-xl leading-normal">
         <div>
@@ -132,10 +138,13 @@ import Layout from "../layouts/Layout.astro";
           accreditate nel settore vinicolo e oleicolo.
         </div>
       </div>
-      <div
-        class="aspect-square w-full flex-shrink-0 bg-[url('/images/centro-enologico-meridionale.jpeg')] bg-cover bg-center xl:w-1/2 xl:max-w-2xl"
-      >
-      </div>
+      <Image
+        src={centroEnologico}
+        alt="Interno del laboratorio del Centro Enologico Meridionale"
+        widths={[480, 800]}
+        sizes="(min-width: 1280px) 50vw, 100vw"
+        class="aspect-square w-full flex-shrink-0 object-cover object-center xl:w-1/2 xl:max-w-2xl"
+      />
     </div>
   </main>
 </Layout>

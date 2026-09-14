@@ -17,7 +17,13 @@ export default [
   ...astro.configs["flat/recommended"],
   {
     languageOptions: {
-      globals: { ...globals.browser, ...globals.node },
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        // ambient types from astro/client, used in .astro frontmatter
+        ImageMetadata: "readonly",
+        astroHTML: "readonly",
+      },
     },
   },
   {

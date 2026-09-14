@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import anto from "../assets/images/anto.jpg";
 import CemServiceTabs from "../components/CemServiceTabs.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -16,10 +18,13 @@ import Layout from "../layouts/Layout.astro";
     <div
       class="flex flex-col items-center justify-center gap-10 p-4 pb-20 xl:flex-row xl:gap-36 xl:p-20 xl:pb-36"
     >
-      <div
-        class="aspect-video w-full max-w-xl flex-shrink-0 bg-[url('/images/anto.jpg')] bg-cover bg-center xl:aspect-square xl:w-1/2"
-      >
-      </div>
+      <Image
+        src={anto}
+        alt="Consulenza Cem Service per le aziende vitivinicole"
+        widths={[480, 800, 1200]}
+        sizes="(min-width: 1280px) 50vw, 100vw"
+        class="aspect-video w-full max-w-xl flex-shrink-0 object-cover object-center xl:aspect-square xl:w-1/2"
+      />
       <div class="flex flex-col gap-10 text-xl leading-normal">
         <div>
           Cem Service, nata nel 2008 per affiancare l’attività di analisi del

@@ -1,13 +1,16 @@
 ---
+import { Image } from "astro:assets";
+
 type Props = {
   id: string;
   title: string;
-  image: string;
+  image: ImageMetadata;
+  imageAlt: string;
   imageSide: "left" | "right";
   active: boolean;
 };
 
-const { id, title, image, imageSide, active } = Astro.props;
+const { id, title, image, imageAlt, imageSide, active } = Astro.props;
 ---
 
 <div
@@ -20,19 +23,25 @@ const { id, title, image, imageSide, active } = Astro.props;
 >
   {
     imageSide === "left" && (
-      <div
-        class="hidden flex-shrink-0 bg-cover bg-bottom lg:block lg:w-1/2"
-        style={`background-image: url('${image}')`}
+      <Image
+        src={image}
+        alt={imageAlt}
+        widths={[480, 800, 1200]}
+        sizes="50vw"
+        loading="lazy"
+        class="hidden flex-shrink-0 object-cover object-bottom lg:block lg:w-1/2"
       />
     )
   }
 
   <div class="relative">
-    <img
-      class="absolute top-0 h-full w-full object-cover lg:hidden"
+    <Image
       src={image}
       alt=""
+      widths={[480, 800]}
+      sizes="100vw"
       loading="lazy"
+      class="absolute top-0 h-full w-full object-cover lg:hidden"
     />
     <div
       class="absolute inset-6 left-0 top-0 h-full w-full bg-black/80 backdrop-blur-sm lg:bg-transparent lg:backdrop-blur-none"
@@ -56,9 +65,13 @@ const { id, title, image, imageSide, active } = Astro.props;
 
   {
     imageSide === "right" && (
-      <div
-        class="hidden flex-shrink-0 bg-cover bg-bottom lg:block lg:w-1/2"
-        style={`background-image: url('${image}')`}
+      <Image
+        src={image}
+        alt={imageAlt}
+        widths={[480, 800, 1200]}
+        sizes="50vw"
+        loading="lazy"
+        class="hidden flex-shrink-0 object-cover object-bottom lg:block lg:w-1/2"
       />
     )
   }

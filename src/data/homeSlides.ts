@@ -1,9 +1,14 @@
+import home2 from "../assets/images/home2.jpg";
+import italo from "../assets/images/italo.jpg";
+import signature from "../assets/images/signature.png";
+import vineyard from "../assets/images/vineyard.jpg";
+
 export type THomeSlide = {
   title: string;
   description: string;
   href: string;
   linkLabel: string;
-  image: string;
+  image: ImageMetadata;
 };
 
 export const homeSlides: THomeSlide[] = [
@@ -13,21 +18,21 @@ export const homeSlides: THomeSlide[] = [
       "Da oltre 50 anni il laboratorio enologico all'avanguardia, affidabile e indipendente.",
     href: "/laboratorio/",
     linkLabel: "Scopri di più",
-    image: "/images/home2.jpg",
+    image: home2,
   },
   {
     title: "Certificazioni",
     description: "Laboratorio certificato ACCREDIA con 63 prove accreditate.",
     href: "/certificazioni/",
     linkLabel: "Scopri di più",
-    image: "/images/signature.png",
+    image: signature,
   },
   {
     title: "Chi Siamo",
     description: "Dal 1971 al servizio dell'enologia.",
     href: "/chi-siamo/",
     linkLabel: "Scopri la nostra storia",
-    image: "/images/italo.jpg",
+    image: italo,
   },
   {
     title: "CEM Service",
@@ -35,6 +40,6 @@ export const homeSlides: THomeSlide[] = [
       "Consulenza in servizi tecnici, legislativi, amministrativi e sportello CAA.",
     href: "/cem-service/",
     linkLabel: "Scopri di più",
-    image: "/images/vineyard.jpg",
+    image: vineyard,
   },
 ];

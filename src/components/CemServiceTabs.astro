@@ -1,4 +1,7 @@
 ---
+import portraitHelp from "../assets/images/portrait-help.jpeg";
+import portraitStrategy from "../assets/images/portrait-strategy.jpeg";
+import portraitVineyard from "../assets/images/portrait-vineyard.jpeg";
 import ServicePanel from "./ServicePanel.astro";
 import Bulb from "./icons/Bulb.astro";
 import Leaf from "./icons/Leaf.astro";
@@ -49,7 +52,8 @@ const iconClass = "w-10 h-10 lg:w-20 lg:h-20 stroke-current";
   <ServicePanel
     id="progettazione"
     title="Progettazione"
-    image="/images/portrait-vineyard.jpeg"
+    image={portraitVineyard}
+    imageAlt="Vigneto seguito dalla divisione progetti di Cem Service"
     imageSide="left"
     active
   >
@@ -59,7 +63,8 @@ const iconClass = "w-10 h-10 lg:w-20 lg:h-20 stroke-current";
   <ServicePanel
     id="consulenza"
     title="Consulenza"
-    image="/images/portrait-help.jpeg"
+    image={portraitHelp}
+    imageAlt="Consulenza tecnica di Cem Service"
     imageSide="right"
     active={false}
   >
@@ -69,7 +74,8 @@ const iconClass = "w-10 h-10 lg:w-20 lg:h-20 stroke-current";
   <ServicePanel
     id="caa"
     title="CAA – Centro Assistenza Agricola"
-    image="/images/portrait-strategy.jpeg"
+    image={portraitStrategy}
+    imageAlt="Sportello CAA di Cem Service"
     imageSide="left"
     active={false}
   >

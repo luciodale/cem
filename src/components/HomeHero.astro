@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { homeSlides } from "../data/homeSlides";
 ---
 
@@ -24,11 +25,11 @@ import { homeSlides } from "../data/homeSlides";
           class="relative flex w-full flex-shrink-0 snap-start flex-col items-center justify-end overflow-hidden pb-16"
           aria-label={`${index + 1} di ${homeSlides.length}`}
         >
-          <img
+          <Image
             src={image}
             alt=""
-            width="1200"
-            height="800"
+            widths={[640, 960, 1280, 1920]}
+            sizes="100vw"
             loading={index === 0 ? "eager" : "lazy"}
             fetchpriority={index === 0 ? "high" : "auto"}
             decoding={index === 0 ? "sync" : "async"}

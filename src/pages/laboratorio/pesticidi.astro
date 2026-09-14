@@ -1,9 +1,7 @@
 ---
-import { getImage } from "astro:assets";
+import { Image } from "astro:assets";
 import pic from "../../assets/images/foto10.jpg";
 import Layout from "../../layouts/Layout.astro";
-
-const img = (await getImage({ src: pic, format: "webp" })).src;
 ---
 
 <Layout
@@ -40,11 +38,13 @@ const img = (await getImage({ src: pic, format: "webp" })).src;
           </ul>
         </div>
       </div>
-      <div
-        style={{ backgroundImage: `url(${img})` }}
-        class={`aspect-video w-full flex-shrink-0 bg-cover bg-center xl:aspect-square xl:w-1/2 max-w-xl`}
-      >
-      </div>
+      <Image
+        src={pic}
+        alt="Analisi multiresiduale dei prodotti fitosanitari in laboratorio"
+        widths={[480, 800, 1200]}
+        sizes="(min-width: 1280px) 50vw, 100vw"
+        class="aspect-video w-full max-w-xl flex-shrink-0 object-cover object-center xl:aspect-square xl:w-1/2"
+      />
     </div>
   </main>
 </Layout>

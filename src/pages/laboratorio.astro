@@ -94,48 +94,14 @@ const links: Record<string, Record<string, string>> = {
   Contaminanti: { pesticidi: "/laboratorio/pesticidi/" },
 };
 
-const carouselImages: Carousel[] = [
-  {
-    src: (await getImage({ src: slide1, format: "webp" })).src,
-    alt: "slide 1",
-  },
-  {
-    src: (await getImage({ src: slide2, format: "webp" })).src,
-    alt: "slide 2",
-  },
-  {
-    src: (await getImage({ src: slide4, format: "webp" })).src,
-    alt: "slide 4",
-  },
-  {
-    src: (await getImage({ src: slide5, format: "webp" })).src,
-    alt: "slide 5",
-  },
-  {
-    src: (await getImage({ src: slide6, format: "webp" })).src,
-    alt: "slide 6",
-  },
-  {
-    src: (await getImage({ src: slide7, format: "webp" })).src,
-    alt: "slide 7",
-  },
-  {
-    src: (await getImage({ src: slide8, format: "webp" })).src,
-    alt: "slide 8",
-  },
-  {
-    src: (await getImage({ src: slide9, format: "webp" })).src,
-    alt: "slide 9",
-  },
-  {
-    src: (await getImage({ src: slide10, format: "webp" })).src,
-    alt: "slide 10",
-  },
-  {
-    src: (await getImage({ src: slide11, format: "webp" })).src,
-    alt: "slide 11",
-  },
-];
+const carouselSources = [slide1, slide2, slide4, slide5, slide6, slide7, slide8, slide9, slide10, slide11];
+
+const carouselImages: Carousel[] = await Promise.all(
+  carouselSources.map(async (src) => ({
+    src: (await getImage({ src, format: "webp", width: 1000 })).src,
+    alt: "Strumentazione e attività del laboratorio CEM",
+  })),
+);
 ---
 
 <style>
