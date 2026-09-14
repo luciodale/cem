@@ -3,6 +3,9 @@ import { SliderHomepage } from "../components/HomeSlider";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Centro Enologico Meridionale">
+<Layout
+  title="CEM Centro Enologico Meridionale | Analisi enologiche dal 1971"
+  appendSiteName={false}
+>
   <SliderHomepage client:only="react" />
 </Layout>
