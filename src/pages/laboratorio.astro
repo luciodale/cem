@@ -89,7 +89,7 @@ const analysis = [
 ];
 
 const links: Record<string, Record<string, string>> = {
-  Contaminanti: { pesticidi: "/laboratorio/pesticidi" },
+  Contaminanti: { pesticidi: "/laboratorio/pesticidi/" },
 };
 
 const carouselImages: Carousel[] = [
@@ -150,6 +150,11 @@ const carouselImages: Carousel[] = [
   description="Oltre 100.000 parametri analitici l’anno su vino, uva, mosti, vinacce, fecce, bevande spiritose e olio. Prove di routine refertate in 24 ore."
 >
   <div class="text-slate-600">
+    <h1
+      class="px-4 pt-10 text-center text-3xl font-bold uppercase tracking-wide"
+    >
+      Laboratorio
+    </h1>
     <div
       class="flex flex-col items-center justify-center gap-10 p-4 pb-20 xl:flex-row xl:gap-36 xl:p-20 xl:pb-36"
     >
@@ -259,35 +264,31 @@ const carouselImages: Carousel[] = [
               return (
                 <div class="mx-auto flex w-full sm:w-96 flex-col justify-between rounded-lg border bg-slate-100 p-6 shadow-lg">
                   <div>
-                    <h5 class="mb-2 text-2xl font-semibold tracking-tight">
+                    <h3 class="mb-2 text-2xl font-semibold tracking-tight">
                       {name}
-                    </h5>
+                    </h3>
 
-                    <p class="mb-3 font-normal text-slate-600">
-                      <ul class="list-inside list-disc">
-                        {analyses.map((analysis) => {
-                          const link = links[name]?.[analysis];
-                          return (
-                            <li class="ml-6 -indent-6 safari-text-indent">
-                              {link ? (
-                                <a
-                                  href={link}
-                                  class="underline gap-1 items-center"
-                                >
-                                  {analysis}
-                                  <img
-                                    src="/images/magnifier.svg"
-                                    class="ml-1 w-4 h-4 inline-block"
-                                  />
-                                </a>
-                              ) : (
-                                analysis
-                              )}
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </p>
+                    <ul class="mb-3 list-inside list-disc font-normal text-slate-600">
+                      {analyses.map((analysis) => {
+                        const link = links[name]?.[analysis];
+                        return (
+                          <li class="ml-6 -indent-6 safari-text-indent">
+                            {link ? (
+                              <a href={link} class="underline gap-1 items-center">
+                                {analysis}
+                                <img
+                                  src="/images/magnifier.svg"
+                                  alt=""
+                                  class="ml-1 w-4 h-4 inline-block"
+                                />
+                              </a>
+                            ) : (
+                              analysis
+                            )}
+                          </li>
+                        );
+                      })}
+                    </ul>
                   </div>
                 </div>
               );

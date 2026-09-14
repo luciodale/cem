@@ -8,6 +8,11 @@ import Layout from "../layouts/Layout.astro";
   description="Dal 1971 il Centro Enologico Meridionale affianca le aziende vitivinicole con analisi di laboratorio, consulenza e 63 prove accreditate ACCREDIA."
 >
   <main class="text-slate-600">
+    <h1
+      class="px-4 pt-10 text-center text-3xl font-bold uppercase tracking-wide"
+    >
+      Chi Siamo
+    </h1>
     <div
       class="flex flex-col items-center justify-center gap-10 p-4 pb-20 xl:flex-row xl:gap-36 xl:p-20 xl:pb-36"
     >
@@ -23,28 +28,22 @@ import Layout from "../layouts/Layout.astro";
           grado di offrire servizi qualificati alle aziende vinicole, in tutti
           gli aspetti della filiera vitivinicola:
         </div>
-        <div class="flex flex-col gap-10">
-          <div class="flex gap-6">
-            <p>
-              Effettuazione delle analisi nel laboratorio chimico su vino, uva,
-              mosti, vinacce, fecce di vino, bevande spiritose e olio
-            </p>
-          </div>
-
-          <div class="flex items-center gap-6">
-            <p>Emissione dei relativi certificati di analisi</p>
-          </div>
-
-          <li class="flex items-center gap-6">
-            <p>
-              Consulenza in servizi scientifici, tecnici, legislativi ed
-              amministrativi in materia vitivinicola
-            </p>
+        <ul class="flex list-inside list-disc flex-col gap-10">
+          <li class="ml-6 -indent-6">
+            Effettuazione delle analisi nel laboratorio chimico su vino, uva,
+            mosti, vinacce, fecce di vino, bevande spiritose e olio
           </li>
-          <li class="flex items-center gap-6">
-            <p>Gestione di progetti di sviluppo nel mondo del vino.</p>
+          <li class="ml-6 -indent-6">
+            Emissione dei relativi certificati di analisi
           </li>
-        </div>
+          <li class="ml-6 -indent-6">
+            Consulenza in servizi scientifici, tecnici, legislativi ed
+            amministrativi in materia vitivinicola
+          </li>
+          <li class="ml-6 -indent-6">
+            Gestione di progetti di sviluppo nel mondo del vino.
+          </li>
+        </ul>
       </div>
     </div>
 

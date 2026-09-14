@@ -20,7 +20,7 @@ const slides = [
     title: "Laboratorio",
     description:
       " Da oltre 50 anni il laboratorio enologico all'avanguardia, affidabile e indipendente.",
-    link: "/laboratorio",
+    link: "/laboratorio/",
     linkLabel: "Scopri di più",
     image: "bg-[url('/images/home2.jpg')]",
     customStyle: { backgroundPosition: "center" },
@@ -28,7 +28,7 @@ const slides = [
   {
     title: "Certificazioni",
     description: "Laboratorio certificato ACCREDIA con 63 prove accreditate.",
-    link: "/certificazioni",
+    link: "/certificazioni/",
     linkLabel: "Scopri di più",
     image: "bg-[url('/images/signature.png')]",
     customStyle: { backgroundPosition: "center" },
@@ -36,7 +36,7 @@ const slides = [
   {
     title: "Chi Siamo",
     description: "Dal 1971 al servizio dell'enologia.",
-    link: "/chi-siamo",
+    link: "/chi-siamo/",
     linkLabel: "Scopri la nostra storia",
     image: "bg-[url('/images/italo.jpg')]",
     customStyle: { backgroundPosition: "center" },
@@ -45,7 +45,7 @@ const slides = [
     title: "CEM Service",
     description:
       "Consulenza in servizi tecnici, legislativi, amministrativi e sportello CAA.",
-    link: "/cem-service",
+    link: "/cem-service/",
     linkLabel: "Scopri di più",
     image: "bg-[url('/images/vineyard.jpg')]",
     customStyle: { backgroundPosition: "center" },
