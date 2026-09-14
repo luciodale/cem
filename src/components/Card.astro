@@ -1,29 +1,31 @@
 ---
-interface Props {
+type Props = {
   title: string;
   description: string;
   link?: string;
   linkCaption?: string;
-}
+};
 
 const { title, description, link, linkCaption } = Astro.props;
 ---
 
 <div
-  class="flex w-96 flex-col justify-between rounded-lg border bg-slate-100 p-6 shadow-lg"
+  class="flex w-full flex-col justify-between rounded-lg border bg-slate-100 p-6 shadow-lg sm:w-96"
 >
   <div>
-    <h5 class="mb-2 text-2xl font-semibold tracking-tight">
-      {title}
-    </h5>
-
+    <h2 class="mb-2 text-2xl font-semibold tracking-tight">{title}</h2>
     <p class="mb-3 font-normal text-slate-600">{description}</p>
   </div>
-  <a
-    href={link}
-    target="_blank"
-    class="inline-flex items-center font-medium text-blue-600 hover:underline"
-  >
-    {linkCaption}
-  </a>
+  {
+    link && (
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center font-medium text-blue-600 hover:underline"
+      >
+        {linkCaption}
+      </a>
+    )
+  }
 </div>

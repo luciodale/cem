@@ -1,5 +1,5 @@
 ---
-import { navLinks } from "../globals";
+import { navLinks } from "../config/navigation";
 
 const currentHref = Astro.url.pathname;
 ---
@@ -24,7 +24,13 @@ const currentHref = Astro.url.pathname;
       class="inline-flex h-14 w-14 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 lg:hidden"
     >
       <span class="sr-only">Apri il menu di navigazione</span>
-      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14" aria-hidden="true">
+      <svg
+        class="h-6 w-6"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 17 14"
+        aria-hidden="true"
+      >
         <path
           stroke="currentColor"
           stroke-linecap="round"

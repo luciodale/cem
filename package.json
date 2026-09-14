@@ -43,9 +43,6 @@
         }
       }
     ],
-    "pluginSearchDirs": [
-      "."
-    ],
     "plugins": [
       "prettier-plugin-astro",
       "prettier-plugin-organize-imports"

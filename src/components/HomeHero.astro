@@ -19,47 +19,49 @@ import { homeSlides } from "../data/homeSlides";
     class="hero-track flex h-hero snap-x snap-mandatory list-none overflow-x-auto scroll-smooth"
   >
     {
-      homeSlides.map(({ title, description, href, linkLabel, image }, index) => (
-        <li
-          id={`hero-slide-${index}`}
-          class="relative flex w-full flex-shrink-0 snap-start flex-col items-center justify-end overflow-hidden pb-16"
-          aria-label={`${index + 1} di ${homeSlides.length}`}
-        >
-          <Image
-            src={image}
-            alt=""
-            widths={[640, 960, 1280, 1920]}
-            sizes="100vw"
-            loading={index === 0 ? "eager" : "lazy"}
-            fetchpriority={index === 0 ? "high" : "auto"}
-            decoding={index === 0 ? "sync" : "async"}
-            class="absolute inset-0 -z-10 h-full w-full object-cover object-center"
-          />
+      homeSlides.map(
+        ({ title, description, href, linkLabel, image }, index) => (
+          <li
+            id={`hero-slide-${index}`}
+            class="relative flex w-full flex-shrink-0 snap-start flex-col items-center justify-end overflow-hidden pb-16"
+            aria-label={`${index + 1} di ${homeSlides.length}`}
+          >
+            <Image
+              src={image}
+              alt=""
+              widths={[640, 960, 1280, 1920]}
+              sizes="100vw"
+              loading={index === 0 ? "eager" : "lazy"}
+              fetchpriority={index === 0 ? "high" : "auto"}
+              decoding={index === 0 ? "sync" : "async"}
+              class="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+            />
 
-          <div class="flex max-w-full flex-col gap-4 bg-white/70 p-6 sm:p-10">
-            {index === 0 ? (
-              <h1 class="text-center text-2xl uppercase sm:text-left sm:text-5xl">
-                {title}
-              </h1>
-            ) : (
-              <h2 class="text-center text-2xl uppercase sm:text-left sm:text-5xl">
-                {title}
-              </h2>
-            )}
-            <p class="text-center text-xl sm:text-left sm:text-3xl">
-              {description}
-            </p>
-            <div class="mx-auto pt-4 sm:mx-0">
-              <a
-                href={href}
-                class="block w-fit cursor-pointer border-2 border-cem px-4 py-2 text-xl font-bold text-cem transition-colors hover:bg-cem hover:text-white"
-              >
-                {linkLabel}
-              </a>
+            <div class="flex max-w-full flex-col gap-4 bg-white/70 p-6 sm:p-10">
+              {index === 0 ? (
+                <h1 class="text-center text-2xl uppercase sm:text-left sm:text-5xl">
+                  {title}
+                </h1>
+              ) : (
+                <h2 class="text-center text-2xl uppercase sm:text-left sm:text-5xl">
+                  {title}
+                </h2>
+              )}
+              <p class="text-center text-xl sm:text-left sm:text-3xl">
+                {description}
+              </p>
+              <div class="mx-auto pt-4 sm:mx-0">
+                <a
+                  href={href}
+                  class="block w-fit cursor-pointer border-2 border-cem px-4 py-2 text-xl font-bold text-cem transition-colors hover:bg-cem hover:text-white"
+                >
+                  {linkLabel}
+                </a>
+              </div>
             </div>
-          </div>
-        </li>
-      ))
+          </li>
+        ),
+      )
     }
   </ul>
 

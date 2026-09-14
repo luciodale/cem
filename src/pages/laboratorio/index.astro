@@ -1,100 +1,37 @@
 ---
 import { getImage } from "astro:assets";
-import slide1 from "../assets/images/foto1.jpg";
-import slide10 from "../assets/images/foto10.jpg";
-import slide11 from "../assets/images/foto11.jpg";
-import slide2 from "../assets/images/foto2.jpg";
-import slide4 from "../assets/images/foto4.jpg";
-import slide5 from "../assets/images/foto5.jpg";
-import slide6 from "../assets/images/foto6.jpg";
-import slide7 from "../assets/images/foto7.jpg";
-import slide8 from "../assets/images/foto8.jpg";
-import slide9 from "../assets/images/foto9.jpg";
-import CertificateIcon from "../components/icons/CertificateIcon.astro";
-import GearIcon from "../components/icons/GearIcon.astro";
-import GrapeIcon from "../components/icons/GrapeIcon.astro";
-import ButtonLink from "../components/ButtonLink.astro";
-import type { Carousel } from "../components/Splide.astro";
-import Splide from "../components/Splide.astro";
-import Layout from "../layouts/Layout.astro";
-import { accrediaLink } from "../constants";
+import slide1 from "../../assets/images/foto1.jpg";
+import slide10 from "../../assets/images/foto10.jpg";
+import slide11 from "../../assets/images/foto11.jpg";
+import slide2 from "../../assets/images/foto2.jpg";
+import slide4 from "../../assets/images/foto4.jpg";
+import slide5 from "../../assets/images/foto5.jpg";
+import slide6 from "../../assets/images/foto6.jpg";
+import slide7 from "../../assets/images/foto7.jpg";
+import slide8 from "../../assets/images/foto8.jpg";
+import slide9 from "../../assets/images/foto9.jpg";
+import CertificateIcon from "../../components/icons/CertificateIcon.astro";
+import GearIcon from "../../components/icons/GearIcon.astro";
+import GrapeIcon from "../../components/icons/GrapeIcon.astro";
+import ButtonLink from "../../components/ButtonLink.astro";
+import type { Carousel } from "../../components/Splide.astro";
+import Splide from "../../components/Splide.astro";
+import { analyses, analysisLinks } from "../../data/analyses";
+import Layout from "../../layouts/Layout.astro";
+import { accrediaLink } from "../../config/externalLinks";
 
-const analysis = [
-  {
-    name: "Analisi di processo",
-    analyses: [
-      "controlli preventivi e contestuali alle fermentazioni",
-      "solforose, acidità ed acidi organici",
-      "estratto, colore, antociani, polifenoli, catechine",
-      "flavani, flavonoli (UV/Vis-HPLC)",
-      "carbammato di etile",
-      "azoto totale, azoto prontamente assimilabile",
-    ],
-  },
-  {
-    name: "Certificazioni ufficiali",
-    analyses: [
-      "esportazione",
-      "commercializzazione, concorsi",
-      "esami chimico-fisici di idoneità DOP e IGP",
-      "sottoprodotti di vinificazione: fecce e vinacce (Agenzia delle Dogane)",
-      "tabella nutrizionale",
-    ],
-  },
-  {
-    name: "Contaminanti",
-    analyses: [
-      "metalli pesanti",
-      "metanolo",
-      "pesticidi",
-      "glicoli",
-      "ocratossina",
-      "ammine biogene",
-      "ftalati",
-      "bisfenolo A",
-    ],
-  },
-  {
-    name: "Prove enologiche e saggi",
-    analyses: [
-      "stabilità proteica, tartarica, del colore",
-      "riboflavina",
-      "dosaggi ausiliari stabilizzanti (bentonite, CMC, poliaspartato)",
-      "indice di ossidabilità, pinking",
-    ],
-  },
-  {
-    name: "Composti volatili",
-    analyses: [
-      "anidride carbonica, ossigeno",
-      "fenoli volatili",
-      "acetaldeide",
-    ],
-  },
-  {
-    name: "Allergeni",
-    analyses: ["caseina, albumina, istamina"],
-  },
-  {
-    name: "Anioni e cationi",
-    analyses: ["solfati, cloruri, fosfati, nitrati", "K, Ca, Mg, Na, Li"],
-  },
-  {
-    name: "Olio di oliva",
-    subtitle: "certificazioni ufficiali",
-    analyses: [
-      "esportazione",
-      "commercializzazione",
-      "analisi chimico-fisica di idoneità DOP e IGP",
-    ],
-  },
+const carouselSources = [
+  slide1,
+  slide2,
+  slide4,
+  slide5,
+  slide6,
+  slide7,
+  slide8,
+  slide9,
+  slide10,
+  slide11,
 ];
-
-const links: Record<string, Record<string, string>> = {
-  Contaminanti: { pesticidi: "/laboratorio/pesticidi/" },
-};
-
-const carouselSources = [slide1, slide2, slide4, slide5, slide6, slide7, slide8, slide9, slide10, slide11];
 
 const carouselImages: Carousel[] = await Promise.all(
   carouselSources.map(async (src) => ({
@@ -228,7 +165,7 @@ const carouselImages: Carousel[] = await Promise.all(
       <div class="flex justify-center">
         <div class="grid grid-cols-1 justify-center gap-10 p-10 lg:grid-cols-2">
           {
-            analysis.map(({ name, analyses }) => {
+            analyses.map(({ name, analyses }) => {
               return (
                 <div class="mx-auto flex w-full sm:w-96 flex-col justify-between rounded-lg border bg-slate-100 p-6 shadow-lg">
                   <div>
@@ -238,11 +175,14 @@ const carouselImages: Carousel[] = await Promise.all(
 
                     <ul class="mb-3 list-inside list-disc font-normal text-slate-600">
                       {analyses.map((analysis) => {
-                        const link = links[name]?.[analysis];
+                        const link = analysisLinks[name]?.[analysis];
                         return (
                           <li class="ml-6 -indent-6 safari-text-indent">
                             {link ? (
-                              <a href={link} class="underline gap-1 items-center">
+                              <a
+                                href={link}
+                                class="underline gap-1 items-center"
+                              >
                                 {analysis}
                                 <img
                                   src="/images/magnifier.svg"
