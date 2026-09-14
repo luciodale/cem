@@ -1,5 +1,5 @@
 ---
-import { BannerCemService } from "../components/BannerCemService";
+import CemServiceTabs from "../components/CemServiceTabs.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -17,7 +17,7 @@ import Layout from "../layouts/Layout.astro";
       class="flex flex-col items-center justify-center gap-10 p-4 pb-20 xl:flex-row xl:gap-36 xl:p-20 xl:pb-36"
     >
       <div
-        class="aspect-video w-full flex-shrink-0 bg-[url('/images/anto.jpg')] bg-cover bg-center xl:aspect-square xl:w-1/2 max-w-xl"
+        class="aspect-video w-full max-w-xl flex-shrink-0 bg-[url('/images/anto.jpg')] bg-cover bg-center xl:aspect-square xl:w-1/2"
       >
       </div>
       <div class="flex flex-col gap-10 text-xl leading-normal">
@@ -38,6 +38,114 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
 
-    <BannerCemService client:only="react" />
+    <CemServiceTabs>
+      <Fragment slot="progettazione">
+        <div>
+          La divisione “Progetti” si occupa di pianificare e coordinare la
+          realizzazione di impianti produttivi per aziende vitivinicole,
+          gestendo anche le pratiche e i bandi di finanziamento per l’accesso ai
+          fondi europei, che permettono di sostenere gli investimenti e sono
+          legati, in particolare:
+        </div>
+        <ul class="flex list-inside list-disc flex-col gap-4">
+          <li class="ml-6 -indent-6">
+            all’OCM Vino (Organizzazione Comune del Mercato Vitivinicolo), ovvero
+            la regolamentazione unica dell’Unione Europea che disciplina i
+            finanziamenti al comparto vitivinicolo
+          </li>
+          <li class="ml-6 -indent-6">
+            al PSR (Programma di Sviluppo Rurale), un altro meccanismo di
+            finanziamento utilizzato dagli Stati membri dell’UE
+          </li>
+        </ul>
+        <div>
+          Con più di 120 progetti realizzati per oltre 200 milioni di euro
+          investiti, il lavoro di progettazione e di interfaccia con gli Enti
+          Territoriali svolto da Cem Service contribuisce in maniera decisiva
+          allo sviluppo del settore vitivinicolo.
+        </div>
+        <ul class="flex list-inside list-disc flex-col gap-4">
+          <li class="ml-6 -indent-6">Studio di fattibilità</li>
+          <li class="ml-6 -indent-6">Business-Plan</li>
+          <li class="ml-6 -indent-6">Progettazione logistica</li>
+          <li class="ml-6 -indent-6">Progettazione impianti tecnologici</li>
+          <li class="ml-6 -indent-6">Progettazione architettonica</li>
+          <li class="ml-6 -indent-6">
+            Studio, presentazione e collaudo di Pratiche di Finanziamento
+          </li>
+        </ul>
+      </Fragment>
+
+      <Fragment slot="consulenza">
+        <div>
+          Attraverso la sua attività di consulenza in servizi scientifici,
+          tecnici, legislativi e amministrativi, Cem Service fornisce alle
+          aziende vitivinicole ulteriore supporto, facendo valere le proprie
+          competenze e la propria esperienza nel settore del vino.
+        </div>
+        <ul class="flex list-inside list-disc flex-col gap-4">
+          <li class="ml-6 -indent-6">
+            Consulenza per identificare lo stile del vino del territorio
+          </li>
+          <li class="ml-6 -indent-6">
+            Consulenza nelle scelte colturali e vendemmiali
+          </li>
+          <li class="ml-6 -indent-6">
+            Consulenza nella tecnologia di vinificazione ed affinamento che
+            assicura il massimo rispetto della qualità e personalità dei vini
+          </li>
+          <li class="ml-6 -indent-6">
+            Consulenza legale in materia vitivinicola
+          </li>
+          <li class="ml-6 -indent-6">
+            Consulenza amministrativa nella gestione specifica delle aziende
+            vitivinicole
+          </li>
+          <li class="ml-6 -indent-6">
+            Consulenza nell’avviamento di nuove iniziative produttive nel mondo
+            del vino
+          </li>
+        </ul>
+      </Fragment>
+
+      <Fragment slot="caa">
+        <div>
+          In qualità di Centro Assistenza Agricola C.A.N.A.P.A. la società Cem
+          Service è autorizzata da AGEA (Agenzia per le Erogazioni in
+          Agricoltura) a gestire i fascicoli aziendali e le domande per
+          l’accesso a specifiche misure di sostegno comunitario, in particolare
+          ai fondi relativi all’OCM Vino (Organizzazione Comune del Mercato
+          Vitivinicolo) e al PSR (Programma di Sviluppo Rurale).
+        </div>
+        <ul class="flex list-inside list-disc flex-col gap-4">
+          <li class="ml-6 -indent-6">
+            Gestione e validazione dei fascicoli aziendali delle imprese
+            agricole sul portale SIAN (Sistema Informativo Agricolo Nazionale)
+          </li>
+          <li class="ml-6 -indent-6">
+            Trasmissioni telematiche: dichiarazioni di giacenza, dichiarazioni
+            di raccolta uve e produzione vitivinicola
+          </li>
+          <li class="ml-6 -indent-6">Adempimenti nel settore vitivinicolo</li>
+          <li class="ml-6 -indent-6">
+            OCM Vino: Misura Investimenti, ristrutturazione vigneti e
+            riconversione aziende agricole
+          </li>
+          <li class="ml-6 -indent-6">
+            Sviluppo Rurale: agricoltura biologica, ampliamenti, primo
+            insediamento
+          </li>
+          <li class="ml-6 -indent-6">
+            PAC (Politica Agricola Comune) e Regime di pagamento unico: Olio,
+            Latte, Seminativi, Zootecnia, Regime Semplificato e Contributi
+            Assicurativi
+          </li>
+          <li class="ml-6 -indent-6">
+            UMA (Utenti Motori Agricoli), Contratti d’affitto
+          </li>
+          <li class="ml-6 -indent-6">Servizi catastali</li>
+        </ul>
+      </Fragment>
+    </CemServiceTabs>
   </main>
 </Layout>

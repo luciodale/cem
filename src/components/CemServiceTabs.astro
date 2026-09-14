@@ -1,0 +1,101 @@
+---
+import ServicePanel from "./ServicePanel.astro";
+import Bulb from "./icons/Bulb.astro";
+import Leaf from "./icons/Leaf.astro";
+import Whiteboard from "./icons/Whiteboard.astro";
+
+const tabs = [
+  { id: "progettazione", title: "Progettazione" },
+  { id: "consulenza", title: "Consulenza" },
+  { id: "caa", title: "CAA – Centro Assistenza Agricola" },
+] as const;
+
+const iconClass = "w-10 h-10 lg:w-20 lg:h-20 stroke-current";
+---
+
+<div>
+  <div class="flex justify-center px-4 md:px-20">
+    <div
+      id="service"
+      class="grid grid-cols-1 gap-2 lg:grid-cols-3 lg:gap-10"
+      role="tablist"
+      aria-label="Servizi di CEM Service"
+    >
+      {
+        tabs.map(({ id, title }, index) => (
+          <button
+            type="button"
+            role="tab"
+            id={`tab-${id}`}
+            data-tab={id}
+            aria-controls={`panel-${id}`}
+            aria-selected={index === 0 ? "true" : "false"}
+            class="flex cursor-pointer flex-col gap-6 border-4 border-cem p-2 text-cem transition-all aria-selected:bg-cem aria-selected:text-white lg:p-10"
+          >
+            <span class="flex h-full items-center gap-4 uppercase lg:flex-col lg:justify-center">
+              <span class="flex-shrink-0">
+                {id === "progettazione" && <Whiteboard class={iconClass} />}
+                {id === "consulenza" && <Bulb class={iconClass} />}
+                {id === "caa" && <Leaf class={iconClass} />}
+              </span>
+              <span class="text-xl font-bold lg:text-center">{title}</span>
+            </span>
+          </button>
+        ))
+      }
+    </div>
+  </div>
+
+  <ServicePanel
+    id="progettazione"
+    title="Progettazione"
+    image="/images/portrait-vineyard.jpeg"
+    imageSide="left"
+    active
+  >
+    <slot name="progettazione" />
+  </ServicePanel>
+
+  <ServicePanel
+    id="consulenza"
+    title="Consulenza"
+    image="/images/portrait-help.jpeg"
+    imageSide="right"
+    active={false}
+  >
+    <slot name="consulenza" />
+  </ServicePanel>
+
+  <ServicePanel
+    id="caa"
+    title="CAA – Centro Assistenza Agricola"
+    image="/images/portrait-strategy.jpeg"
+    imageSide="left"
+    active={false}
+  >
+    <slot name="caa" />
+  </ServicePanel>
+</div>
+
+<script>
+  const tabButtons = Array.from(
+    document.querySelectorAll<HTMLButtonElement>("[data-tab]"),
+  );
+  const panels = Array.from(
+    document.querySelectorAll<HTMLElement>("[data-panel]"),
+  );
+
+  for (const button of tabButtons) {
+    button.addEventListener("click", () => {
+      for (const other of tabButtons) {
+        other.setAttribute(
+          "aria-selected",
+          String(other.dataset.tab === button.dataset.tab),
+        );
+      }
+      for (const panel of panels) {
+        panel.hidden = panel.dataset.panel !== button.dataset.tab;
+      }
+    });
+  }
+</script>

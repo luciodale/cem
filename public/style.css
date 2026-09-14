@@ -7,3 +7,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* A display utility on the element would otherwise beat the UA rule for
+   [hidden], leaving hidden tab panels visible. */
+[hidden] {
+  display: none !important;
+}

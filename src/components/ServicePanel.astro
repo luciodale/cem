@@ -1,0 +1,65 @@
+---
+type Props = {
+  id: string;
+  title: string;
+  image: string;
+  imageSide: "left" | "right";
+  active: boolean;
+};
+
+const { id, title, image, imageSide, active } = Astro.props;
+---
+
+<div
+  id={`panel-${id}`}
+  role="tabpanel"
+  aria-labelledby={`tab-${id}`}
+  data-panel={id}
+  hidden={!active}
+  class="flex gap-10 p-4 pt-10 md:p-20 xl:gap-28"
+>
+  {
+    imageSide === "left" && (
+      <div
+        class="hidden flex-shrink-0 bg-cover bg-bottom lg:block lg:w-1/2"
+        style={`background-image: url('${image}')`}
+      />
+    )
+  }
+
+  <div class="relative">
+    <img
+      class="absolute top-0 h-full w-full object-cover lg:hidden"
+      src={image}
+      alt=""
+      loading="lazy"
+    />
+    <div
+      class="absolute inset-6 left-0 top-0 h-full w-full bg-black/80 backdrop-blur-sm lg:bg-transparent lg:backdrop-blur-none"
+    >
+    </div>
+    <div
+      class="relative z-10 flex flex-col gap-10 p-10 text-lg text-white lg:text-xl lg:text-slate-600 xl:px-0 xl:py-20"
+    >
+      <h2 class="sr-only">{title}</h2>
+      <slot />
+      <div class="pt-6">
+        <a
+          href="#service"
+          class="block w-fit cursor-pointer border-2 border-cem px-4 py-2 text-xl font-bold text-cem transition-colors hover:bg-cem hover:text-white"
+        >
+          Torna alla selezione
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {
+    imageSide === "right" && (
+      <div
+        class="hidden flex-shrink-0 bg-cover bg-bottom lg:block lg:w-1/2"
+        style={`background-image: url('${image}')`}
+      />
+    )
+  }
+</div>

@@ -1,6 +1,9 @@
 ---
 import { navLinks } from "../globals";
-import { Facebook, Instagram, LinkedIn, YouTube } from "./Icons";
+import Facebook from "./icons/Facebook.astro";
+import Instagram from "./icons/Instagram.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+import YouTube from "./icons/YouTube.astro";
 
 const currentHref = Astro.url.pathname;
 ---
@@ -47,25 +50,25 @@ const currentHref = Astro.url.pathname;
           href="https://www.facebook.com/centroenologicomeridionale"
           target="_blank"
         >
-          <Facebook className="h-6 w-6 fill-cem hover:fill-black" />
+          <Facebook class="h-6 w-6 fill-cem hover:fill-black" />
         </a>
         <a
           href="https://www.instagram.com/centroenologicomeridionale/"
           target="_blank"
         >
-          <Instagram className="h-6 w-6 fill-cem hover:fill-black" />
+          <Instagram class="h-6 w-6 fill-cem hover:fill-black" />
         </a>
         <a
           href="https://www.linkedin.com/company/centroenologicomeridionale/"
           target="_blank"
         >
-          <LinkedIn className="h-6 w-6 fill-cem hover:fill-black" />
+          <LinkedIn class="h-6 w-6 fill-cem hover:fill-black" />
         </a>
         <a
           href="https://www.youtube.com/channel/UCV4EX3HzsaEHEwToFciDvvg"
           target="_blank"
         >
-          <YouTube className="h-6 w-6 fill-cem hover:fill-black" />
+          <YouTube class="h-6 w-6 fill-cem hover:fill-black" />
         </a>
       </div>
     </div>

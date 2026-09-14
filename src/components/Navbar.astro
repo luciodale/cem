@@ -1,6 +1,87 @@
 ---
-import NavbarTSX from "./Navbar";
+import { navLinks } from "../globals";
+
 const currentHref = Astro.url.pathname;
 ---
 
-<NavbarTSX client:visible {currentHref} />
+<nav class="relative z-50 h-navbar border-gray-200 bg-white">
+  <div
+    class="mx-auto flex h-full max-w-screen-xl items-center justify-between px-4 py-1"
+  >
+    <a
+      href="/"
+      class="flex items-center justify-center space-x-3 sm:w-1/6 rtl:space-x-reverse"
+    >
+      <img src="/logo.svg" class="w-28" alt="" width="112" height="140" />
+      <div>Centro <br /> Enologico <br /> Meridionale</div>
+    </a>
+
+    <button
+      id="burger-button"
+      type="button"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      class="inline-flex h-14 w-14 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 lg:hidden"
+    >
+      <span class="sr-only">Apri il menu di navigazione</span>
+      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14" aria-hidden="true">
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15"></path>
+      </svg>
+    </button>
+
+    {
+      navLinks.map(({ href, name }) => (
+        <a
+          href={href}
+          aria-current={currentHref === href ? "page" : undefined}
+          class:list={[
+            "hidden w-1/6 rounded py-2 text-center text-xl uppercase hover:bg-gray-100 lg:block lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-cem",
+            currentHref === href && "font-bold text-cem",
+          ]}
+        >
+          {name}
+        </a>
+      ))
+    }
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="fixed left-0 flex h-dvh w-full max-h-0 flex-col items-center gap-8 overflow-hidden bg-cem text-xs uppercase tracking-widest transition-all lg:hidden"
+  >
+    {
+      navLinks.map(({ name, href }) => (
+        <a
+          href={href}
+          aria-current={currentHref === href ? "page" : undefined}
+          class:list={[
+            "flex items-center text-xl text-white transition-colors first-of-type:pt-8",
+            currentHref === href && "font-bold",
+          ]}
+        >
+          {name}
+        </a>
+      ))
+    }
+  </div>
+</nav>
+
+<script>
+  const burger = document.getElementById("burger-button");
+  const menu = document.getElementById("mobile-menu");
+
+  burger?.addEventListener("click", () => {
+    const willOpen = burger.getAttribute("aria-expanded") !== "true";
+
+    burger.setAttribute("aria-expanded", String(willOpen));
+    menu?.classList.toggle("max-h-0", !willOpen);
+    menu?.classList.toggle("max-h-screen", willOpen);
+    menu?.classList.toggle("pb-4", willOpen);
+    document.body.style.overflow = willOpen ? "hidden" : "auto";
+  });
+</script>
