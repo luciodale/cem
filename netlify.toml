@@ -1,7 +1,3 @@
-[build]
-  command = "bun run build"
-  publish = "dist"
-
 # Hashed build output: the filename changes whenever the bytes do.
 [[headers]]
   for = "/_astro/*"
