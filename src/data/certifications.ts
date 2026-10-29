@@ -53,4 +53,20 @@ export const certifications: TCertification[] = [
     link: "/certificato-accredia.pdf",
     linkCaption: "Apri Documento",
   },
+  {
+    title:
+      "Registrazione nella lista del Ministero della salute giapponese per l’analisi di alimenti esportati in Giappone",
+    description:
+      "Registrazione presso il Ministero della Salute giapponese per l’abilitazione a svolgere analisi di alimenti destinati all’esportazione in Giappone. Numero di iscrizione IT10133",
+    link: "/registrazione-mhlw-giappone.pdf",
+    linkCaption: "Apri Documento",
+  },
+  {
+    title:
+      "Registrazione nel registro brasiliano di laboratori esteri per l’analisi di vini, bevande alcoliche, olio di oliva e prodotti derivati dall’uva e dal vino",
+    description:
+      "Registrazione presso il SISCOLE (Sistema de Cadastro de Organismos e Laboratórios Estrangeiros) per l’abilitazione a svolgere analisi di prodotti destinati all’esportazione in Brasile",
+    link: "/registrazione-siscole-brasile.pdf",
+    linkCaption: "Apri Documento",
+  },
 ];
